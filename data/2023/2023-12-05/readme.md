@@ -1,48 +1,28 @@
-# Life Expectancy
+# 预期寿命
 
-Our World in Data released a [new report on life expectancy](https://ourworldindata.org/life-expectancy), and analysis and interpretations are making the rounds this week, and you can join in too! 
+我们的世界数据发布了一份[关于预期寿命的新报告](https://ourworldindata.org/life-expectancy)，本周对该报告的分析和解释正在进行，您也可以加入进来！
 
-We had a dataset on Global Life Expectancy on [2018-07-03](https://github.com/rfordatascience/tidytuesday/tree/master/data/2018#readme), so if you're a long time tidytuesday-er, this is a chance for some new analyses. 
+我们在[2018-07-03](https://github.com/rfordatascience/tidytuesday/tree/master/data/2018#readme)有一个关于全球预期寿命的数据集，所以如果您是长期的 TidyTuesday 粉丝，这是一次进行新分析的机会。
 
-The data this week comes the [Our World in Data Life Expectancy report](https://ourworldindata.org/life-expectancy), specifically the figures in the [key insights](https://ourworldindata.org/life-expectancy#key-insights) section. The source for this data is from United Nations World Population Prospects (2022); Human Mortality Database (2023); Zijdeman, Richard and Filipa Ribeira da Silva (2015), [Life Expectancy at Birth (Total)](http://hdl.handle.net/10622/LKYT5); Riley, J.C. (2005), [Estimates of Regional and Global Life Expectancy 1800-2001](https://doi.org/10.1111/j.1728-4457.2005.00083.x), Population and Development Review, 31: 537-543. Minor processing by Our World in Data. 
+本周的数据来自[我们的世界数据预期寿命报告](https://ourworldindata.org/life-expectancy)，具体来自[关键洞察](https://ourworldindata.org/life-expectancy#key-insights)部分的数据。此数据的来源是联合国世界人口展望（2022年）；人类死亡数据库（2023年）；Zijdeman, Richard 和 Filipa Ribeira da Silva (2015), [出生时的预期寿命（总计）](http://hdl.handle.net/10622/LKYT5)；Riley, J.C. (2005), [1800-2001年地区和全球预期寿命估计](https://doi.org/10.1111/j.1728-4457.2005.00083.x)，人口与发展评论，31: 537-543。我们的世界数据稍作处理。
 
->Across the world, people are living longer.
-In 1900, the average life expectancy of a newborn was 32 years. By 2021 this had more than doubled to 71 years.
-But where, when, how, and why has this dramatic change occurred?
-To understand it, we can look at data on life expectancy worldwide.
-The large reduction in child mortality has played an important role in increasing life expectancy. But life expectancy has increased at all ages. Infants, children, adults, and the elderly are all less likely to die than in the past, and death is being delayed.
-This remarkable shift results from advances in medicine, public health, and living standards. Along with it, many predictions of the ‘limit’ of life expectancy have been broken.
-On the Our World in Data Life Expectancy page, you will find global data and research on life expectancy and related measures of longevity: the probability of death at a given age, the sex gap in life expectancy, lifespan inequality within countries, and more.
+> 世界各地的人们都活得更久了。1900年，新生儿的平均预期寿命为32岁。到2021年，这一数字已经翻了一番多，达到了71岁。但这种巨大变化是在何时、何地、如何以及为什么发生的呢？为了理解这一点，我们可以查看全球预期寿命的数据。儿童死亡率的大幅降低在增加预期寿命方面发挥了重要作用。但是各年龄段的预期寿命都在增加。与过去相比，婴儿、儿童、成年人和老年人都不太可能死亡，死亡也被推迟了。这种显著变化是医学、公共卫生和生活水平的进步带来的。伴随着这些进步，许多关于预期寿命“限度”的预测都被打破了。在我们的世界数据预期寿命页面上，您将找到有关全球预期寿命及其相关长寿措施的数据和研究：特定年龄的死亡概率、预期寿命的性别差距、国家内的寿命不平等等。
 
-
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
-## install.packages("tidytuesdayR")
-
-tuesdata <- tidytuesdayR::tt_load('2023-12-05')
-## OR
-tuesdata <- tidytuesdayR::tt_load(2023, week = 49)
-
-life_expectancy <- tuesdata$life_expectancy
-life_expectancy_different_ages <- tuesdata$life_expectancy_different_ages
-life_expectancy_female_male <- tuesdata$life_expectancy_female_male
-
-# Option 2: Read directly from GitHub
-
 life_expectancy <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-12-05/life_expectancy.csv')
 life_expectancy_different_ages <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-12-05/life_expectancy_different_ages.csv')
 life_expectancy_female_male <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-12-05/life_expectancy_female_male.csv')
 ```
 
-## How to Participate
+## 如何参与
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们要强调的是，您不应该从数据中得出**因果关系**的结论。影响所有数据的各种调节变量很多，其中许多可能没有在这些数据集中捕获到。因此，我们建议您使用提供的数据来练习数据整理和绘图技术，并自行考虑这些关系背后可能存在的细微差别。
+- 使用R或其他编程语言创建可视化、模型、[闪亮的应用](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-### Data Dictionary
+### 数据字典
 
 # `life_expectancy.csv`
 
