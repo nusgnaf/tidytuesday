@@ -1,52 +1,28 @@
-# R Package Structure
+# R包结构
 
-Happy Boxing Day!
-While you're dealing with your physical packages, we're looking into R packages!
+节日愉快！在您处理物理包裹的同时，我们来看看R包！
 
-The dataset this week comes from ["Historical Trends in R Package Structure and Interdependency on CRAN"](https://mpadge.github.io/pkgstats-analyses/articles/pkgstats.html) by Mark Padgham and Noam Ross.
-In that paper, they use the [{pkgstats}](https://cran.r-project.org/package=pkgstats) R package to analyze the structure of R packages over time, using an archive of all packages on [CRAN](https://cran.r-project.org/) as of 2022-11-22.
-We've provided csv versions of two of [the datasets from that paper](https://zenodo.org/records/7414296).
+本周的数据集来自 Mark Padgham 和 Noam Ross 的 ["Historical Trends in R Package Structure and Interdependency on CRAN"](https://mpadge.github.io/pkgstats-analyses/articles/pkgstats.html)。在那篇论文中，他们使用了 [{pkgstats}](https://cran.r-project.org/package=pkgstats) R包来分析R包的结构，使用了截至 2022 年 11 月 22 日的 [CRAN](https://cran.r-project.org/) 上所有包的存档。我们提供了该论文中两个数据集的 csv 版本。
 
-The paper focuses on package characteristics over time.
-It might be interesting to look at the distribution of similar features (such as lines of code) across packages.
+该论文关注的是随时间推移的包特征。查看类似特征（如代码行数）在包之间的分布可能会很有趣。
 
-If you're unfamiliar with some of the terminology in this dataset, you might find the [R Packages](https://r-pkgs.org/) book by Hadley Wickham and Jennifer Bryan helpful.
+如果您对数据集中的某些术语不熟悉，可以查阅 Hadley Wickham 和 Jennifer Bryan 的 [R包](https://r-pkgs.org/) 书籍。
 
-## The Data
+## 数据
 
-
-```{r}
-# Option 1: tidytuesdayR package 
-## install.packages("tidytuesdayR")
-
-tuesdata <- tidytuesdayR::tt_load('2023-12-26')
-## OR
-tuesdata <- tidytuesdayR::tt_load(2023, week = 52)
-
-cran_20221122 <- tuesdata$cran_20221122
-external_calls <- tuesdata$external_calls
-internal_calls <- tuesdata$internal_calls
-
-# Option 2: Read directly from GitHub
-
-cran_20221122 <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-12-26/cran_20221122.csv')
-external_calls <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-12-26/external_calls.csv')
-internal_calls <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-12-26/internal_calls.csv')
-```
-
-If you would like to dive deeper, you can download the larger dataset with this code:
+如果您想深入了解，可以使用以下代码下载更大的数据集：
 
 ```{r}
 cran_all_20221122 <- readr::read_rds("https://zenodo.org/records/7414296/files/pkgstats-CRAN-all.Rds?download=1")
 ```
 
-## How to Participate
+## 如何参与
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们要强调的是，您不应该从数据中得出**因果关系**的结论。影响所有数据的各种调节变量很多，其中许多可能没有在这些数据集中捕获到。因此，我们建议您使用提供的数据来练习数据整理和绘图技术，并自行考虑这些关系背后可能存在的细微差别。
+- 使用R或其他编程语言创建可视化、模型、[闪亮的应用](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-### Data Dictionary
+### 数据字典
 
 # `cran_20221122.csv`
 
