@@ -1,35 +1,35 @@
-# Educational attainment of young people in English towns
+# 英格兰小镇青少年的教育程度
 
-The [dataset](https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/educationandchildcare/datasets/educationalattainmentofyoungpeopleinenglishtownsdata/200708201819/youngpeoplesattainmentintownsreferencetable1.xlsx) this week comes from [The UK Office for National Statistics](https://www.ons.gov.uk/).
-It was explored in the July 2023 article ["Why do children and young people in smaller towns do better academically than those in larger towns?"](https://www.ons.gov.uk/peoplepopulationandcommunity/educationandchildcare/articles/whydochildrenandyoungpeopleinsmallertownsdobetteracademicallythanthoseinlargertowns/2023-07-25).
-Thank you [Andrea Carpignani](https://github.com/acarpignani) for the dataset suggestion.
+本周的[数据集](https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/educationandchildcare/datasets/educationalattainmentofyoungpeopleinenglishtownsdata/200708201819/youngpeoplesattainmentintownsreferencetable1.xlsx)来自[英国国家统计局](https://www.ons.gov.uk/)。
+该数据集在2023年7月的文章["为什么小镇的儿童和青少年在学业上比大城镇的好？"](https://www.ons.gov.uk/peoplepopulationandcommunity/educationandchildcare/articles/whydochildrenandyoungpeopleinsmallertownsdobetteracademicallythanthoseinlargertowns/2023-07-25)中进行了探讨。
+感谢[Andrea Carpignani](https://github.com/acarpignani)提供数据集建议。
 
-The article this week contains several plots, one of which is interactive. Can you reproduce them? Can you find anything in the data that isn't explored in the article?
+本周的文章包含了几个图表，其中一个是交互式的。你能重现它们吗？你能在数据中找到任何没有在文章中探讨的内容吗？
 
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项1：tidytuesdayR 包 
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2024-01-23')
-## OR
+## 或者
 tuesdata <- tidytuesdayR::tt_load(2024, week = 4)
 
 english_education <- tuesdata$english_education
 
-# Option 2: Read directly from GitHub
+# 选项2：直接从 GitHub 读取
 
 english_education <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-01-23/english_education.csv')
 ```
 
-## How to Participate
+## 如何参与
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们想强调的是，您不应在数据中得出**因果**的结论。有许多影响所有数据的调节变量，其中许多可能没有在这些数据集中捕获到。因此，我们建议您使用所提供的数据来练习数据整理和绘图技术，并考虑这些关系下可能存在的细微差别。
+- 使用 R 或其他编程语言创建可视化、模型、[闪亮应用程序](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-### Data Dictionary
+### 数据字典
 
 # `english_education.csv`
 
