@@ -1,14 +1,14 @@
-# US House Election Results
+# 美国众议院选举结果
 
-It's election day in the United States! To celebrate, the data this week comes from the [MIT Election Data and Science Lab](https://electionlab.mit.edu/) (MEDSL). Hat tip this week to the [RStudio GitHub Copilot integration](https://docs.posit.co/ide/user/ide/guide/tools/copilot.html), which suggested the MEDSL.
+今天是美国的选举日！为了庆祝，本周的数据来自[麻省理工学院选举数据与科学实验室](https://electionlab.mit.edu/)（MEDSL）。本周向[RStudio GitHub Copilot集成](https://docs.posit.co/ide/user/ide/guide/tools/copilot.html)致敬，它推荐了MEDSL。
 
-From the MEDSL's report [New Report: How We Voted in 2022](https://electionlab.mit.edu/articles/new-report-how-we-voted-2022):
+根据MEDSL的报告[新报告：我们在2022年如何投票](https://electionlab.mit.edu/articles/new-report-how-we-voted-2022)：
 
-> The Survey of the Performance of American Elections (SPAE) provides information about how Americans experienced voting in the most recent federal election. The survey has been conducted after federal elections since 2008, and is the only public opinion project in the country that is dedicated explicitly to understanding how voters themselves experience the election process.
+> 美国选举绩效调查（SPAE）提供了有关美国人在最近一次联邦选举中的投票体验的信息。自2008年以来，该调查一直在联邦选举后进行，是该国唯一一个明确致力于理解选民如何体验选举过程的公共意见项目。
 
-We're specifically providing data on House elections from 1976-2022. Check out the [MEDSL website](https://electionlab.mit.edu/) for additional datasets and tools.
+我们特别提供了1976年至2022年的众议院选举数据。查看[MEDSL网站](https://electionlab.mit.edu/)以获取其他数据集和工具。
 
-Be sure to cite the MEDSL in your work:
+在您的工作中务必引用MEDSL：
 
 ```
 @data{DVN/IG0UN2_2017,
@@ -23,10 +23,10 @@ url = {https://doi.org/10.7910/DVN/IG0UN2}
 }
 ```
 
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项1：tidytuesdayR包 
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2023-11-07')
@@ -35,19 +35,18 @@ tuesdata <- tidytuesdayR::tt_load(2023, week = 45)
 
 house <- tuesdata$house
 
-# Option 2: Read directly from GitHub
+# 选项2：直接从GitHub读取
 
 house <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-11-07/house.csv')
 ```
 
-## How to Participate
+## 如何参与
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们要强调的是，您不应该从数据中得出**因果关系**的结论。影响所有数据的各种调节变量很多，其中许多可能没有在这些数据集中捕获到。因此，我们建议您使用提供的数据来练习数据整理和绘图技术，并自行考虑这些关系背后可能存在的细微差别。
+- 使用R或其他编程语言创建可视化、模型、[闪亮的应用](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-
-### Data Dictionary
+### 数据字典
 
 # `house.csv`
 
