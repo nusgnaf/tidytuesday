@@ -1,29 +1,28 @@
-# Canadian Hockey Player Birth Months
+# 加拿大曲棍球球员出生月份
 
-If you're a Canadian hockey player, happy birth month!
-That's more likely to be correct this time of year than in the Fall!
+如果你是一名加拿大曲棍球球员，祝你生日快乐！现在这个时间比秋天更有可能是正确的出生月份！
 
-The dataset this week comes from [Statistics Canada](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310041501&pickMembers%5B0%5D=3.1&cubeTimeFrame.startYear=1991&cubeTimeFrame.endYear=2022&referencePeriods=19910101%2C20220101), the [NHL team list endpoint](https://api.nhle.com/stats/rest/en/team), and the [NHL API](https://api-web.nhle.com/v1/).
-The dataset was inspired by the blog [Are Birth Dates Still Destiny for Canadian NHL Players?](https://jlaw.netlify.app/2023/12/04/are-birth-dates-still-destiny-for-canadian-nhl-players/) by JLaw (via [https://universeodon.com/@jlaw/111522860812359901](Mastodon))!
+本周的数据集来自[加拿大统计局](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310041501&pickMembers%5B0%5D=3.1&cubeTimeFrame.startYear=1991&cubeTimeFrame.endYear=2022&referencePeriods=19910101%2C20220101)、[NHL球队列表端点](https://api.nhle.com/stats/rest/en/team)，以及[NHL API](https://api-web.nhle.com/v1/)。
+这个数据集受到了JLaw的博客["加拿大NHL球员的出生日期仍然是命运吗？"](https://jlaw.netlify.app/2023/12/04/are-birth-dates-still-destiny-for-canadian-nhl-players/)的启发（通过[Mastodon](https://universeodon.com/@jlaw/111522860812359901)）！
 
-> In the first chapter [Malcolm Gladwell’s Outliers](https://www.amazon.com/Outliers-Story-Success-Malcolm-Gladwell/dp/0316017930) he discusses how in Canadian Junior Hockey there is a higher likelihood for players to be born in the first quarter of the year.
+> 在[马尔科姆·格拉德威尔的《异类》](https://www.amazon.com/Outliers-Story-Success-Malcolm-Gladwell/dp/0316017930)的第一章中，他讨论了在加拿大青少年曲棍球中，更有可能出生于一年的第一季度。
 
-> Because these kids are older within their year they make all the important teams at a young age which gets them better resources for skill development and so on.
+> 因为这些孩子在他们的年龄组内年龄较大，他们在年幼时就加入了所有重要的球队，这使得他们能够获得更好的技能发展资源等。
 
-> While it seems clear that more players are born in the first few months of the year, what isn’t explored is whether or not this would be expected. Maybe more people in Canada in general are born earlier in the year.
+> 虽然似乎更多的球员出生在年初几个月，但尚未探讨的是是否可以预期到这种情况。也许加拿大一般的人更多地出生在年初。
 
-> I will explore whether Gladwell’s result is expected as well as whether this is still true in today’s NHL for Canadian-born players.
+> 我将探讨格拉德威尔的结果是否是预期的，以及这在当今的NHL对于出生在加拿大的球员是否仍然成立。
 
-Can you reproduce JLaw's results? What else can you find in the NHL player data?
+你能复现JLaw的结果吗？在NHL球员数据中还能找到什么？
 
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项1：tidytuesdayR 包 
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2024-01-09')
-## OR
+## 或者
 tuesdata <- tidytuesdayR::tt_load(2024, week = 2)
 
 canada_births_1991_2022 <- tuesdata$canada_births_1991_2022
@@ -31,7 +30,7 @@ nhl_player_births <- tuesdata$nhl_player_births
 nhl_rosters <- tuesdata$nhl_rosters
 nhl_teams <- tuesdata$nhl_teams
 
-# Option 2: Read directly from GitHub
+# 选项2：直接从 GitHub 读取
 
 canada_births_1991_2022 <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-01-09/canada_births_1991_2022.csv')
 nhl_player_births <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-01-09/nhl_player_births.csv')
@@ -39,13 +38,13 @@ nhl_rosters <- readr::read_csv('https://raw.githubusercontent.com/rfordatascienc
 nhl_teams <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-01-09/nhl_teams.csv')
 ```
 
-## How to Participate
+## 如何参与
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们想强调的是，您不应在数据中得出**因果**的结论。有许多影响所有数据的调节变量，其中许多可能没有在这些数据集中捕获到。因此，我们建议您使用所提供的数据来练习数据整理和绘图技术，并考虑这些关系下可能存在的细微差别。
+- 使用 R 或其他编程语言创建可视化、模型、[闪亮应用程序](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-### Data Dictionary
+### 数据字典
 
 # `canada_births_1991_2022.csv`
 
