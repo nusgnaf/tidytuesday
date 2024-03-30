@@ -1,39 +1,38 @@
-# Patient Risk Profiles
+# 患者风险概况
 
-The virtual [R/Pharma Conference](https://rinpharma.com/) is happening this week!
-To celebrate, we're exploring Patient Risk Profiles. 
-Thank you to [Jenna Reps](https://github.com/jreps) for preparing this week's data!
+虚拟的[R/Pharma会议](https://rinpharma.com/)本周正在举行！
+为了庆祝，我们将探索患者风险概况。
+感谢[Jenna Reps](https://github.com/jreps)为本周的数据做准备！
 
-> This dataset contains 100 simulated patient's medical history features and the predicted 1-year risk of 14 outcomes based on each patient's medical history features. The predictions used real logistic regression models developed on a large real world healthcare dataset.
+> 该数据集包含了100个模拟患者的医疗史特征以及基于每个患者的医疗史特征预测的14种结果的1年风险。预测使用了在一个大型真实世界的医疗保健数据集上开发的真实 logistic 回归模型。
 
-Note: We did *not* clean the column names this week. 
-This data looks more like the sort of data you're likely to encounter in the wild, so we thought it would be good practice to work with it as-is.
+注意：本周我们*没有*清理列名。
+这些数据看起来更像是您在野外遇到的那种数据，因此我们认为按原样处理它是很好的实践。
 
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项1：tidytuesdayR 包
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2023-10-24')
-## OR
+## 或者
 tuesdata <- tidytuesdayR::tt_load(2023, week = 43)
 
 patient_risk_profiles <- tuesdata$patient_risk_profiles
 
-# Option 2: Read directly from GitHub
+# 选项2：直接从 GitHub 读取
 
 patient_risk_profiles <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-10-24/patient_risk_profiles.csv')
 ```
 
-## How to Participate
+## 参与方式
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们想强调的是，您不应在数据中得出关于**因果关系**的结论。有许多影响所有数据的调节变量，其中许多可能没有在这些数据集中捕获到。因此，我们建议您使用提供的数据来练习数据整理和绘图技术，并考虑自己可能潜在的这些关系背后的细微差别。
+- 使用R或其他编程语言创建可视化、模型、[闪亮应用](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-
-### Data Dictionary
+### 数据字典
 
 # `patient_risk_profiles.csv`
 
