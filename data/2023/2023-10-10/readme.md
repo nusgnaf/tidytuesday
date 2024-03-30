@@ -1,37 +1,34 @@
-# Haunted Places in the United States
+# 美国的闹鬼地点
 
-Halloween is coming soon, so we're exploring a spooky dataset: a compilation of Haunted Places in the United States. 
-The dataset was [compiled by Tim Renner](https://github.com/timothyrenner/shadowlands-haunted-places), using [The Shadowlands Haunted Places Index](https://www.theshadowlands.net/places/), and [shared on data.world](https://data.world/timothyrenner/haunted-places).
+万圣节即将到来，因此我们正在探索一个令人毛骨悚然的数据集：美国的闹鬼地点编译。该数据集由[Tim Renner](https://github.com/timothyrenner/shadowlands-haunted-places)编制，使用了[The Shadowlands闹鬼地点索引](https://www.theshadowlands.net/places/)，并在[data.world](https://data.world/timothyrenner/haunted-places)上分享。
 
-We're also using this dataset as a reminder that [several R packages for spatial data are heading to the graveyard next week](https://geocompx.org/post/2023/rgdal-retirement/index.html).
-Don't be tricked by their demise!
+我们还利用这个数据集提醒大家，[下周将有几个用于空间数据的R包将被放入墓地](https://geocompx.org/post/2023/rgdal-retirement/index.html)。不要被它们的消亡所欺骗！
 
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项1：tidytuesdayR 包
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2023-10-10')
-## OR
+## 或者
 tuesdata <- tidytuesdayR::tt_load(2023, week = 41)
 
 haunted_places <- tuesdata$haunted_places
 
-# Option 2: Read directly from GitHub
+# 选项2：直接从 GitHub 读取
 
 haunted_places <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-10-10/haunted_places.csv')
 
 ```
 
-## How to Participate
+## 参与方式
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们想强调的是，您不应在数据中得出关于**因果关系**的结论。有许多影响所有数据的调节变量，其中许多可能没有在这些数据集中捕获到。因此，我们建议您使用提供的数据来练习数据整理和绘图技术，并考虑自己可能潜在的这些关系背后的细微差别。
+- 使用R或其他编程语言创建可视化、模型、[闪亮应用](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-
-### Data Dictionary
+### 数据字典
 
 # `haunted_places.csv`
 
