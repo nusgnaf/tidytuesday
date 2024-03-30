@@ -1,79 +1,81 @@
-### Please add alt text to your posts
+### 请为您的帖子添加替代文本
 
-Please add alt text (alternative text) to all of your posted graphics for `#TidyTuesday`. 
+请为您发布的所有`#TidyTuesday`图形添加替代文本（alt text）。
 
-Twitter provides [guidelines](https://help.twitter.com/en/using-twitter/picture-descriptions) for how to add alt text to your images.
+Twitter提供了有关如何为图像添加替代文本的[指南](https://help.twitter.com/en/using-twitter/picture-descriptions)。
 
-The DataViz Society/Nightingale by way of Amy Cesal has an [article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) on writing _good_ alt text for plots/graphs.
+DataViz Society/Nightingale（通过Amy Cesal提供）有一篇关于编写_好的_图表/图形替代文本的[文章](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)。
 
-> Here's a simple formula for writing alt text for data visualization:
-> ### Chart type
-> It's helpful for people with partial sight to know what chart type it is and gives context for understanding the rest of the visual.
-> Example: Line graph
-> ### Type of data
-> What data is included in the chart? The x and y axis labels may help you figure this out.
-> Example: number of bananas sold per day in the last year
-> ### Reason for including the chart
-> Think about why you're including this visual. What does it show that's meaningful. There should be a point to every visual and you should tell people what to look for.
-> Example: the winter months have more banana sales
-> ### Link to data or source
-> Don't include this in your alt text, but it should be included somewhere in the surrounding text. People should be able to click on a link to view the source data or dig further into the visual. This provides transparency about your source and lets people explore the data.
-> Example: Data from the USDA
+> 这是一个编写数据可视化替代文本的简单公式：
+> ### 图表类型
+> 让部分视力受损的人知道图表类型是什么，并为理解其余视觉提供上下文是有帮助的。
+> 示例：线图
+> ### 数据类型
+> 图表中包含了哪些数据？X和Y轴标签可能会帮助您弄清楚这一点。
+> 示例：过去一年每天销售的香蕉数量
+> ### 包含图表的原因
+> 想想为什么要包含这个可视化内容。它展示了什么有意义的信息。每个可视化内容都应该有一个要点，并且您应该告诉人们要寻找什么。
+> 示例：冬季月份的香蕉销售量更高
+> ### 数据或来源链接
+> 请不要在您的替代文本中包含此信息，但应该在周围的文本中包含此信息。人们应该能够点击链接查看源数据或深入探究可视化内容。这提供了关于您的数据来源的透明度，并让人们探索数据。
+> 示例：数据来自美国农业部
 
-Penn State has an [article](https://accessibility.psu.edu/images/charts/) on writing alt text descriptions for charts and tables.
+宾夕法尼亚州立大学有一篇关于为图表和表格编写替代文本描述的[文章](https://accessibility.psu.edu/images/charts/)。
 
-> Charts, graphs and maps use visuals to convey complex images to users. But since they are images, these media provide serious accessibility issues to colorblind users and users of screen readers. See the [examples on this page](https://accessibility.psu.edu/images/charts/) for details on how to make charts more accessible.
+> 图表、图形和地图使用视觉元素向用户传达复杂的图像。但由于它们是图像，对色盲用户和屏幕阅读器用户提供了严重的无障碍问题。有关如何使图表更易访问的详细信息，请参阅[此页面上的示例](https://accessibility.psu.edu/images/charts/)。
 
-The `{rtweet}` package includes the [ability to post tweets](https://docs.ropensci.org/rtweet/reference/post_tweet.html) with alt text programatically.
+`{rtweet}`包包括[以编程方式添加替代文本](https://docs.ropensci.org/rtweet/reference/post_tweet.html)的功能。
 
-Need a **reminder**? There are [extensions](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related) that force you to remember to add Alt Text to Tweets with media.
+需要**提醒**吗？有[扩展程序](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related)可以强制您记住为带媒体的推文添加替代文本。
 
-# Project FeederWatch
+# 鸟类喂食器观察数据
 
-The data this week comes from the [Project FeederWatch](https://feederwatch.org/explore/raw-dataset-requests/).
+本周的数据来自[Project FeederWatch](https://feederwatch.org/explore/raw-dataset-requests/)。
 
-> FeederWatch is a November-April survey of birds that visit backyards, nature centers, community areas, and other locales in North America. Citizen scientists could birds in areas with plantings, habitat, water, or food that attracts birds. The schedule is completely flexible. People count birds as long as they like on days of their choosing, then enter their counts online. This allows anyone to track what is happening to birds around your home and to contribute to a continental data-set of bird distribution and abundance.
+> FeederWatch是一个从11月到4月进行的关于访问北美后院、自然中心、社区区域和其他地点的鸟类的调查。公民科学家可以在吸引鸟类的植被、栖息地、水源或食物的区域观察鸟类。时间安排完全灵活。人们可以在选择的日期上随意观察鸟类，然后在网上输入观察到的数量。这使任何人都可以追踪家周围的鸟类状况，并为鸟类分布和数量的大陆数据集做出贡献。
 
-> FeederWatch data show which bird species visit feeders at thousands of locations across the continent every winter. The data also indicate how many individuals of each species are seen. This information can be used to measure changes in the winter ranges and abundances of bird species over time.
+> FeederWatch数据显示了每个冬季在整个大陆上数千个地点的鸟类物种访问饲料器。数据还显示了每个物种的个体数量。这些信息可以用来衡量鸟类物种的冬季分布范围和数量随时间的变化。
 
-A subset of the 2021 data is included for this TidyTuesday, but data available through 1988 is available for download on [FeederWatch Raw Dataset Downloads page](https://feederwatch.org/explore/raw-dataset-requests/)
+本周的TidyTuesday包含2021年数据的子集，但自1988年以来的数据可通过[FeederWatch原始数据集下载页面](https://feederwatch.org/explore/raw-dataset-requests/)下载。
 
-> Project FeederWatch is operated by the Cornell Lab of Ornithology and Birds Canada. Since 2016, Project FeederWatch has been sponsored by Wild Bird Unlimited. 
+> Project FeederWatch由康奈尔鸟类学实验室和加拿大鸟类运营。自2016年以来，Project FeederWatch由Wild Bird Unlimited赞助。
 
-> Acknowledging FeederWatch.
+> 对FeederWatch的感谢。
 
-> The Cornell Lab of Ornithology and Birds Canada are committed to making data gathered through our citizen science programs freely accessible to students, journalists, and the general public."  
+> 康奈尔鸟类学实验室和加拿大鸟类致力于使通过我们的公民科学计划收集的数据免费提供给学生、记者和普通公众。
 
-> "This unique dataset is completely dependent on the efforts of our network of volunteer participants. We ask that all data analysts give credit to the thousands of participants who have made FeederWatch possible, as well as to Birds Canada and the Cornell Lab of Ornithology for developing and managing the program."
+> “这个独特的数据集完全依赖于我们成千上万的志愿者参与者的努力。我们要求所有数据分析人员感谢为FeederWatch的实现做出了贡献的成千上万的参与者，以及为开发和管理该项目的康奈尔鸟类学实验室和加拿大鸟类。”
 
-[Examples of analyses](https://feederwatch.org/explore/raw-dataset-requests/) are included with the raw data and there is a section to [Explore](https://feederwatch.org/explore/) the data.
+[分析示例](https://feederwatch.org/explore/raw-dataset-requests/)与原始数据一起提供，并且有一个部分可以[探索](https://feederwatch.org/explore/)数据。
 
-More details on analyzing this dataset:  
-[Over 30 Years of Standardized Bird Counts at Supplementary Feeding Stations in North America: A Citizen Science Data Report for Project FeederWatch](https://www.frontiersin.org/articles/10.3389/fevo.2021.619682/full) by David N. Bonter and Emma I. Greig
+有关分析此数据集的更多详细信息：
+[30多年来在北美补充喂鸟站进行的标准化鸟类计数：Project FeederWatch的公民科学数据报告](https://www.frontiersin.org/articles/10.3389/fevo.2021.619682/full) 由David N. Bonter和Emma I. Greig
 
-### Get the data here
+### 在此处获取数据
+
+鸟类喂食器观察数据
 
 ```{r}
-# Get the Data
+# 获取数据
 
-# Read in with tidytuesdayR package 
-# Install from CRAN via: install.packages("tidytuesdayR")
-# This loads the readme and all the datasets for the week of interest
+# 使用tidytuesdayR包读取
+# 通过CRAN安装：install.packages("tidytuesdayR")
+# 这将加载感兴趣周的自述文件和所有数据集
 
-# Either ISO-8601 date or year/week works!
+# ISO-8601日期或年/周均可使用！
 
 tuesdata <- tidytuesdayR::tt_load('2023-01-10')
 tuesdata <- tidytuesdayR::tt_load(2023, week = 02)
 
 feederwatch <- tuesdata$feederwatch
 
-# Or read in the data manually
+# 或者手动读取数据
 
 feederwatch <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-01-10/PFW_2021_public.csv')
 site_data <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-01-10/PFW_count_site_data_public_2021.csv')
 
 ```
-### Data Dictionary
+### 数据字典
 
 > The [Project FeederWatch Data Dictionary](https://drive.google.com/file/d/1kHmx2XhA2MJtEyTNMpwqTQEnoa9M7Il2/view?usp=sharing) explains all fields and codes used in the database and is essential for understanding the dataset.
 
