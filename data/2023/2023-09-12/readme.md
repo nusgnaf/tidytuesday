@@ -1,23 +1,23 @@
-# The Global Human Day
+# 全球人类日
 
-The data this week comes from the [The Human Chronome Project](https://www.humanchronome.org/) an initiative based at McGill University in Montreal, from their paper [The global human day in PNAS](https://www.pnas.org/doi/10.1073/pnas.2219564120#sec-2) and the [associated dataset on Zenodo](https://zenodo.org/record/8040631).
+本周的数据来自位于蒙特利尔麦吉尔大学的[人类时间项目](https://www.humanchronome.org/)，其研究论文为[《PNAS 中的全球人类日》](https://www.pnas.org/doi/10.1073/pnas.2219564120#sec-2)，以及[Zenodo 上的相关数据集](https://zenodo.org/record/8040631)。
 
-> The daily activities of ≈8 billion people occupy exactly 24 h per day, placing a strict physical limit on what changes can be achieved in the world. These activities form the basis of human behavior, and because of the global integration of societies and economies, many of these activities interact across national borders. This project estimates how all humans spend their time using a generalized, physical outcome–based categorization that facilitates the integration of data from hundreds of diverse datasets. 
+> 大约80亿人每天活动确切地占用了24小时，这为世界带来了严格的物理限制，限制了世界上能够实现的变化。这些活动构成了人类行为的基础，由于社会和经济的全球一体化，许多这些活动跨越国界进行交互。该项目使用一种广义的、基于物理结果的分类方法估计了所有人类如何度过他们的时间，这种方法有助于整合来自数百个不同数据集的数据。
 
-See their [supplementary materials](https://www.pnas.org/doi/10.1073/pnas.2219564120#supplementary-materials) for details about their methods and additional visualizations. 
+请参阅他们的[补充材料](https://www.pnas.org/doi/10.1073/pnas.2219564120#supplementary-materials)以了解他们的方法详情和额外的可视化。
 
-The [Zenodo dataset](https://zenodo.org/record/8040631) includes the input data and scripts used to create the datasets used in the paper. The datasets are from the outputData file "all_countries.csv", "global_human_day.csv", "global_economic_activity.csv" and inputData "country_regions.csv". The outputData files are aggregated output data from data collected, created from the scripts in the 'scripts' directory.
+[Zenodo 数据集](https://zenodo.org/record/8040631)包括用于创建论文中使用的数据集的输入数据和脚本。数据集来自输出文件 "all_countries.csv"、"global_human_day.csv" 和 "global_economic_activity.csv"，以及输入数据 "country_regions.csv"。输出数据文件是从收集的数据中创建的聚合输出数据，是在 'scripts' 目录中的脚本中生成的。
 
-h/t [Data is Plural 2023-07-13 newsletter](https://www.data-is-plural.com/archive/2023-07-12-edition/) for the dataset.
+感谢[Data is Plural 2023-07-13 新闻通讯](https://www.data-is-plural.com/archive/2023-07-12-edition/)提供了数据。
 
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项1：tidytuesdayR 包
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2023-09-12')
-## OR
+## 或者
 tuesdata <- tidytuesdayR::tt_load(2023, week = 37)
 
 all_countries <- tuesdata$all_countries
@@ -25,7 +25,7 @@ country_regions <- tuesdata$country_regions
 global_human_day <- tuesdata$global_human_day
 global_economic_activity <- tuesdata$global_economic_activity
 
-# Option 2: Read directly from GitHub
+# 选项2：直接从 GitHub 读取
 
 all_countries <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-09-12/all_countries.csv')
 country_regions <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-09-12/country_regions.csv')
@@ -33,14 +33,13 @@ global_human_day <- readr::read_csv('https://raw.githubusercontent.com/rfordatas
 global_economic_activity <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-09-12/global_economic_activity.csv')
 ```
 
-## How to Participate
+## 参与方式
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们要强调的是，您不应在数据中得出关于**因果关系**的结论。有许多影响所有数据的调节变量，其中许多可能没有在这些数据集中捕获到。因此，我们建议您使用提供的数据来练习数据整理和绘图技术，并考虑自己可能潜在的这些关系背后的细微差别。
+- 使用 R 或其他编程语言创建可视化、模型、[闪亮应用](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-
-### Data Dictionary
+### 数据字典
 
 # `all_countries.csv`
 
