@@ -1,44 +1,43 @@
-# Union Membership in the United States
+# 美国工会会员情况
 
-Happy Labor Day*!
+祝劳动节快乐*！
 
-The data this week comes from the [Union Membership, Coverage, and Earnings from the CPS](https://www.unionstats.com/) by Barry Hirsch (Georgia State University), David Macpherson (Trinity University), and William Even (Miami University). They claim a copyright on the data, and state that "Use of data requires citation."
+本周的数据来自由巴里·赫希（乔治亚州立大学）、大卫·麦克弗森（三一大学）和威廉·伊文（迈阿密大学）提供的[美国当前人口调查中的工会会员、覆盖范围和收入](https://www.unionstats.com/)。他们对数据拥有版权，并表示“使用数据需要引用”。
 
-> Unionstats.com provides annual measures of union, nonunion, and overall wages, beginning in 1973, compiled from the U.S. Current Population Surveys. Regression-based union wage gap estimates are presented economy-wide, for demographic groups, and sectors (private/public, industries). Union wage gaps are higher in the private than in the public sector, higher for men than women, roughly similar for black and white men, and much higher for Hispanic men than for Hispanic women. The database is updated annually.
+> Unionstats.com 提供了自 1973 年以来的年度工会、非工会和总工资水平，这些数据来自美国当前人口调查。数据库提供了基于回归的整体工会工资差距估计，适用于经济、人口统计组群和行业（私营/公共、产业）。私营部门的工会工资差距高于公共部门，男性的工会工资差距高于女性，黑人男性和白人男性的工会工资差距大致相似，而西班牙裔男性的工会工资差距要远远高于西班牙裔女性。该数据库每年更新一次。
 
-See their open-access article ["Five decades of CPS wages, methods, and union-nonunion wage gaps at Unionstats.com"](https://onlinelibrary.wiley.com/doi/10.1111/irel.12330) for details about their methods and additional visualizations.
+请参阅他们的开放获取文章[《五十年来的 CPS 工资、方法和工会-非工会工资差距》](https://onlinelibrary.wiley.com/doi/10.1111/irel.12330)以了解他们的方法详情和额外的可视化。
 
-* The first Monday in September was officially recognized as [Labor Day](https://en.wikipedia.org/wiki/Labor_Day) by the state of Oregon in 1887 and became an official U.S. federal holiday in 1894, 10 years before May first was adopted as [International Workers' Day](https://en.wikipedia.org/wiki/International_Workers%27_Day) by the International Socialist Congress. May 1 was chosen in part to commemorate the [Haymarket affair](https://en.wikipedia.org/wiki/Haymarket_affair), a strike and incident of police violence that took place in Chicago in 1886. There's no reason everyone can't recognize both days!
+* 九月的第一个星期一被[劳动节](https://en.wikipedia.org/wiki/Labor_Day)正式承认，最早于1887年由俄勒冈州承认，并在1894年成为美国官方联邦假日，早于国际社会主义者大会采用的五一国际劳动节[International Workers' Day](https://en.wikipedia.org/wiki/International_Workers%27_Day) 十年。五月一日的选择部分原因是为了纪念1886年芝加哥发生的[黑色星期五事件](https://en.wikipedia.org/wiki/Haymarket_affair)——一场罢工和警察暴力事件。没有理由每个人都不能认可这两天！
 
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项1：tidytuesdayR 包
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2023-09-05')
-## OR
+## 或者
 tuesdata <- tidytuesdayR::tt_load(2023, week = 36)
 
 demographics <- tuesdata$demographics
 wages <- tuesdata$wages
 states <- tuesdata$states
 
-# Option 2: Read directly from GitHub
+# 选项2：直接从 GitHub 读取
 
 demographics <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-09-05/demographics.csv')
 wages <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-09-05/wages.csv')
 states <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-09-05/states.csv')
 ```
 
-## How to Participate
+## 参与方式
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们要强调的是，您不应在数据中得出关于**因果关系**的结论。有许多影响所有数据的调节变量，其中许多可能没有在这些数据集中捕获到。因此，我们建议您使用提供的数据来练习数据整理和绘图技术，并考虑自己可能潜在的这些关系背后的细微差别。
+- 使用 R 或其他编程语言创建可视化、模型、[闪亮应用](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-
-### Data Dictionary
+### 数据字典
 
 # `demographics.csv`
 
