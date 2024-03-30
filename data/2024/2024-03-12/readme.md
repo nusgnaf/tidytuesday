@@ -1,23 +1,22 @@
-# Fiscal Sponsors
+# 财务赞助商
 
-TidyTuesday is organized by the [R4DS Online Learning Community](https://r4ds.io).
-We are currently (when this dataset was first posted in March, 2024) seeking a new fiscal sponsor.
-See [our Donate page](https://r4ds.io/donate.html) for details about our current efforts.
+TidyTuesday是由[R4DS在线学习社区](https://r4ds.io)组织的。
+我们目前（当这个数据集在2024年3月首次发布时）正在寻找一个新的财务赞助商。
+请参阅[我们的捐赠页面](https://r4ds.io/donate.html)了解有关我们当前努力的详细信息。
 
-To aid in our search, the dataset this week comes from the [Fiscal Sponsor Directory](https://fiscalsponsordirectory.org/?page_id=1330).
-The data is fairly messy, but you may be able to extract more information from it.
+为了帮助我们的搜索，本周的数据集来自[财务赞助商目录](https://fiscalsponsordirectory.org/?page_id=1330)。
+数据相当混乱，但您可能可以从中提取更多信息。
 
-The Fiscal Sponsor Directory [analyzed their directory in March 2023](https://fiscalsponsordirectory.org/?page_id=95).
+财务赞助商目录在[2023年3月分析了他们的目录](https://fiscalsponsordirectory.org/?page_id=95)。
 
-- Has the data changed?
-- Can you identify other trends, or represent them more clearly?
-- Can you identify sponsors that might be particularly appealing to the R4DS Online Learning Community, a "diverse, friendly, and inclusive community of data science learners and practitioners" (a global community based in Austin, Texas, USA)?
+- 数据是否有所改变？
+- 您能否识别出其他趋势，或者更清晰地表示它们？
+- 您能否找到对R4DS在线学习社区特别有吸引力的赞助商？R4DS在线学习社区是一个“多元化、友好和包容性的数据科学学习者和从业者社区”（总部位于美国德克萨斯州奥斯汀的全球社区）？
 
-
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项 1: tidytuesdayR 包 
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2024-03-12')
@@ -27,19 +26,19 @@ tuesdata <- tidytuesdayR::tt_load(2024, week = 11)
 fiscal_sponsor_directory <- tuesdata$fiscal_sponsor_directory
 
 
-# Option 2: Read directly from GitHub
+# 选项 2: 直接从 GitHub 读取
 
 fiscal_sponsor_directory <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-03-12/fiscal_sponsor_directory.csv')
 
 ```
 
-## How to Participate
+## 如何参与
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们要强调的是，您不应该在数据中得出**因果关系**的结论。影响所有数据的各种调节变量，其中许多可能没有在这些数据集中捕获。因此，我们建议您使用所提供的数据来练习数据整理和绘图技术，并自行考虑这些关系背后可能存在的细微差别。
+- 使用 R 或其他编程语言创建可视化、模型、[闪亮应用](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-### Data Dictionary
+### 数据字典
 
 # `fiscal_sponsor_directory.csv`
 
@@ -59,9 +58,9 @@ fiscal_sponsor_directory <- readr::read_csv('https://raw.githubusercontent.com/r
 |description                        |character |A free text description of this organization. |
 
 
-### Cleaning Script
+### 清理脚本
 
-Note: To separate the `eligibility_criteria`, `project_types`, `services`, and `fiscal_sponsorship_model` fields into list columns, you can use the following code:
+注意：要将 `eligibility_criteria`、`project_types`、`services` 和 `fiscal_sponsorship_model` 字段分隔成列表列，您可以使用以下代码：
 
 ``` r
 fiscal_sponsor_directory |> 
