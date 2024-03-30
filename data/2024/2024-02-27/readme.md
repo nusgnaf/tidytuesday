@@ -1,17 +1,17 @@
-# Leap Day
+# 闰年日
 
-Happy Leap Day! This week's data comes from the [February 29](https://en.wikipedia.org/wiki/February_29) article on Wikipedia.
+闰年日快乐！本周的数据来自维基百科上的[2月29日](https://en.wikipedia.org/wiki/February_29)条目。
 
-> February 29 is a leap day (or "leap year day"), an intercalary date added periodically to create leap years in the Julian and Gregorian calendars.
+> 2月29日是一个闰日（或"闰年日"），周期性添加到儒略历和格里高利历中以创建闰年的日期。
 
-One event that's missing from Wikipedia's list: [R version 1.0 was released on February 29, 2000](https://en.wikipedia.org/wiki/R_(programming_language)#History).
+维基百科列表中缺少的一个事件是：[R语言的1.0版本于2000年2月29日发布](https://en.wikipedia.org/wiki/R_(programming_language)#History)。
 
-Which cohort of leap day births is most represented in Wikipedia's data? Are any years surprisingly underrepresented compared to nearby years? What other patterns can you find in the data?
+哪个年龄段的闰年日出生在维基百科的数据中最常见？与附近年份相比，有没有年份的数据明显较少？您能在数据中发现什么其他模式？
 
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项 1: tidytuesdayR 包 
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2024-02-27')
@@ -22,20 +22,20 @@ events <- tuesdata$events
 births <- tuesdata$births
 deaths <- tuesdata$deaths
 
-# Option 2: Read directly from GitHub
+# 选项 2: 直接从 GitHub 读取
 
 events <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-02-27/events.csv')
 births <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-02-27/births.csv')
 deaths <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-02-27/deaths.csv')
 ```
 
-## How to Participate
+## 如何参与
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们要强调的是，您不应该在数据中得出**因果关系**的结论。影响所有数据的各种调节变量，其中许多可能没有在这些数据集中捕获。因此，我们建议您使用所提供的数据来练习数据整理和绘图技术，并自行考虑这些关系背后可能存在的细微差别。
+- 使用 R 或其他编程语言创建可视化、模型、[闪亮应用](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-### Data Dictionary
+### 数据字典
 
 # `events.csv`
 
@@ -62,7 +62,7 @@ deaths <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tid
 |description |character |A short description of the person. |
 |year_birth  |integer   |Year in which this person was born. |
 
-### Cleaning Script
+### 清洗脚本
 
 ``` r
 library(tidyverse)
