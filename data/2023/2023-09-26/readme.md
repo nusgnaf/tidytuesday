@@ -1,43 +1,41 @@
-# Roy Kent F**k count
+# 罗伊·肯特的 F**k 计数
 
-For Deepsha Menghani's talk on [Data Viz animation and interactivity in Quarto](https://deepshamenghani.github.io/posit_plotly_crosstalk/#/title-slide), she watched each episode of Ted Lasso at 2X speed and diligently noted down every F*bomb and gesture reference, and then made it into the [richmondway R package](https://github.com/deepshamenghani/richmondway)!
+对于Deepsha Menghani关于[Quarto中数据可视化动画和交互性的讲座](https://deepshamenghani.github.io/posit_plotly_crosstalk/#/title-slide)，她以2倍速观看了《泰德·拉索》的每一集，并认真记录了每一个 F*bomb 和手势参考，然后将其制作成了[richmondway R包](https://github.com/deepshamenghani/richmondway)！
 
-What is Ted Lasso and who is Roy Kent? 
+泰德·拉索是什么，罗伊·肯特是谁？
 
-[Ted Lasso](https://en.wikipedia.org/wiki/Ted_Lasso) is a TV show that "follows Ted Lasso, an American college football coach who is hired to coach an English soccer team with the secret intention that his inexperience will lead it to failure, but whose folksy, optimistic leadership proves unexpectedly successful."
+[泰德·拉索](https://en.wikipedia.org/wiki/Ted_Lasso)是一部电视剧，"讲述了泰德·拉索，一个美国大学橄榄球教练被聘请来指导一支英格兰足球队，他的秘密意图是他的经验不足会导致失败，但是他乡村、乐观的领导风格意外地取得了成功。"
 
-[Roy Kent](https://ted-lasso.fandom.com/wiki/Roy_Kent) is one of the main characters who goes from captain of AFC Richmond to one of the coaches. Particularly in early seasons, he's a man of few words, but many of them are f**k, expressed in various moods - mad, sad, happy, amused, loving, surprised, thoughtful, and joyous. 
+[罗伊·肯特](https://ted-lasso.fandom.com/wiki/Roy_Kent)是其中的一个主要角色，从 AFC 里士满队的队长变成了教练之一。特别是在早期季节，他是一个话不多的人，但他说的话中有很多是 f**k，表达了各种情绪 - 愤怒、悲伤、快乐、欢笑、爱、惊讶、思考和欢欣。
 
-This dataset includes the number, percentage, and context of f**k used in the show for each episode.
+该数据集包括了每一集中使用的 f**k 的数量、百分比和上下文。
 
-## The Data
+## 数据
 
 ```{r}
-# Scroll to the end of this code block to see how to recombine the data into a
-# graph!
+# 滚动到代码块的末尾，看到如何将数据重新组合成图形！
 
-# Option 1: tidytuesdayR package 
+# 选项1：tidytuesdayR 包
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2023-09-26')
-## OR
+## 或者
 tuesdata <- tidytuesdayR::tt_load(2023, week = 39)
 
 richmondway <- tuesdata$richmondway
 
-# Option 2: Read directly from GitHub
+# 选项2：直接从 GitHub 读取
 
 richmondway <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-09-26/richmondway.csv')
 ```
 
-## How to Participate
+## 参与方式
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们想强调的是，您不应在数据中得出关于**因果关系**的结论。有许多影响所有数据的调节变量，其中许多可能没有在这些数据集中捕获到。因此，我们建议您使用提供的数据来练习数据整理和绘图技术，并考虑自己可能潜在的这些关系背后的细微差别。
+- 使用R或其他编程语言创建可视化、模型、[闪亮应用](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-
-### Data Dictionary
+### 数据字典
 
 Source Created by Deepsha Menghani by watching the show and counting the number of F-cks used in sentences and as gestures.
 
