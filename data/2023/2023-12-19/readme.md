@@ -1,38 +1,25 @@
-# Holiday Episodes
+# 节日剧集
 
-Happy holidays!
-Last week we explored ["holiday" movies](../2023-12-12/readme.md).
-This week we're exploring "holiday" TV episodes: individual episodes of TV shows with "holiday", "Christmas", "Hanukkah", or "Kwanzaa" (or variants thereof) in their title!
+节日快乐！上周我们探索了["节日"电影](../2023-12-12/readme.md)。本周我们将探索"节日"电视剧集：即电视剧中标题含有"节日"、"圣诞"、"光明节"或"坎萨节"（或其变体）的单集！
 
-The data this week again comes from the [Internet Movie Database](https://developer.imdb.com/non-commercial-datasets/).
-We don't have an article using exactly this dataset, but you might get inspiration from the TVTropes [Holiday Episode](https://tvtropes.org/pmwiki/pmwiki.php/Main/HolidayEpisode) article.
+本周的数据同样来自[互联网电影数据库（IMDb）](https://developer.imdb.com/non-commercial-datasets/)。我们没有使用完全相同数据集的文章，但您可能会从 TVTropes 的[节日剧集](https://tvtropes.org/pmwiki/pmwiki.php/Main/HolidayEpisode)文章中获得灵感。
 
-## The Data
+## 数据
+
+如果您想深入了解，可以使用以下代码下载更大的数据集：
 
 ```{r}
-# Option 1: tidytuesdayR package 
-## install.packages("tidytuesdayR")
-
-tuesdata <- tidytuesdayR::tt_load('2023-12-19')
-## OR
-tuesdata <- tidytuesdayR::tt_load(2023, week = 51)
-
-holiday_episodes <- tuesdata$holiday_episodes
-holiday_episode_genres <- tuesdata$holiday_episode_genres
-
-# Option 2: Read directly from GitHub
-
 holiday_episodes <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-12-19/holiday_episodes.csv')
 holiday_episode_genres <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-12-19/holiday_episode_genres.csv')
 ```
 
-## How to Participate
+## 如何参与
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们要强调的是，您不应该从数据中得出**因果关系**的结论。影响所有数据的各种调节变量很多，其中许多可能没有在这些数据集中捕获到。因此，我们建议您使用提供的数据来练习数据整理和绘图技术，并自行考虑这些关系背后可能存在的细微差别。
+- 使用R或其他编程语言创建可视化、模型、[闪亮的应用](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-### Data Dictionary
+### 数据字典
 
 # `holiday_episodes.csv`
 
