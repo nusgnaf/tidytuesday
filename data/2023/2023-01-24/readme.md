@@ -1,59 +1,29 @@
-### Please add alt text to your posts
-
-Please add alt text (alternative text) to all of your posted graphics for `#TidyTuesday`. 
-
-Twitter provides [guidelines](https://help.twitter.com/en/using-twitter/picture-descriptions) for how to add alt text to your images.
-
-The DataViz Society/Nightingale by way of Amy Cesal has an [article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) on writing _good_ alt text for plots/graphs.
-
-> Here's a simple formula for writing alt text for data visualization:
-> ### Chart type
-> It's helpful for people with partial sight to know what chart type it is and gives context for understanding the rest of the visual.
-> Example: Line graph
-> ### Type of data
-> What data is included in the chart? The x and y axis labels may help you figure this out.
-> Example: number of bananas sold per day in the last year
-> ### Reason for including the chart
-> Think about why you're including this visual. What does it show that's meaningful. There should be a point to every visual and you should tell people what to look for.
-> Example: the winter months have more banana sales
-> ### Link to data or source
-> Don't include this in your alt text, but it should be included somewhere in the surrounding text. People should be able to click on a link to view the source data or dig further into the visual. This provides transparency about your source and lets people explore the data.
-> Example: Data from the USDA
-
-Penn State has an [article](https://accessibility.psu.edu/images/charts/) on writing alt text descriptions for charts and tables.
-
-> Charts, graphs and maps use visuals to convey complex images to users. But since they are images, these media provide serious accessibility issues to colorblind users and users of screen readers. See the [examples on this page](https://accessibility.psu.edu/images/charts/) for details on how to make charts more accessible.
-
-The `{rtweet}` package includes the [ability to post tweets](https://docs.ropensci.org/rtweet/reference/post_tweet.html) with alt text programatically.
-
-Need a **reminder**? There are [extensions](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related) that force you to remember to add Alt Text to Tweets with media.
-
 # Alone
 
-The data this week comes from the [Alone data package](https://github.com/doehm/alone) by Dan Oehm. 
+本周的数据来自[Alone数据包](https://github.com/doehm/alone)，由Dan Oehm提供。
 
-> This dataset contains data from the TV series [Alone](https://www.history.com/shows/alone) collected and shared by [Dan Oehm](https://gradientdescending.com/). As described in Oehm's blog post](https://gradientdescending.com/alone-r-package-datasets-from-the-survival-tv-series/), in the survival TV series ‘Alone,' 10 survivalists are dropped in an extremely remote area and must fend for themselves. They aim to last 100 days in the Artic winter, living off the land through their survival skills, endurance, and mental fortitude. 
+> 此数据集包含了从电视系列[Alone](https://www.history.com/shows/alone)中收集和分享的数据，由[Dan Oehm](https://gradientdescending.com/)提供。正如Oehm在他的博客文章中所描述的，在求生电视系列“Alone”中，10名求生者被投放到一个非常偏远的地区，必须独自生存。他们的目标是在北极冬季生存100天，靠着他们的求生技能、耐力和心理韧性在野外生活。
 
-> This package contains four datasets:
+> 此包含有四个数据集：
 
-> * survivalists.csv: A data frame of survivalists across all 9 seasons detailing name and demographics, location and profession, result, days lasted, reasons for tapping out (detailed and categorised), and page URL.
+> * survivalists.csv: 涵盖了所有9个季节的求生者的数据框，详细说明了姓名和人口统计信息、位置和职业、结果、生存天数、退出的原因（详细和分类），以及页面URL。
 
-> * loadouts.csv: The rules allow each survivalist to take 10 items with them. This dataset includes information on each survivalist's loadout. It has detailed item descriptions and a simplified version for easier aggregation and analysis
+> * loadouts.csv: 规则允许每个求生者携带10件物品。此数据集包含了每个求生者的装备信息。它包含了详细的物品描述和一个简化版本，以便更容易地进行汇总和分析。
 
-> * episodes.csv: This dataset contains details of each episode including the title, number of viewers, beginning quote, and IMDb rating. New episodes are added at the end of future seasons.
+> * episodes.csv: 此数据集包含了每一集的详细信息，包括标题、观看人数、开始引用和IMDb评分。新的剧集将在将来的季节结束后添加。
 
-> * seasons.csv: The season summary dataset includes location, latitude and longitude, and other season-level information. It includes the date of drop-off where the information exists.
+> * seasons.csv: 季节总结数据集包括位置、纬度和经度以及其他季节级别的信息。如果存在投放日期信息，则包括投放日期。
 
-Acknowledging the Alone dataset
+致谢Alone数据集
 
 > Dan Oehm:
-* Alone data package: [https://github.com/doehm/alone](https://github.com/doehm/alone)
-* Alone data package blog post: [https://gradientdescending.com/alone-r-package-datasets-from-the-survival-tv-series/](https://gradientdescending.com/alone-r-package-datasets-from-the-survival-tv-series/)
+* Alone数据包: [https://github.com/doehm/alone](https://github.com/doehm/alone)
+* Alone数据包博客文章: [https://gradientdescending.com/alone-r-package-datasets-from-the-survival-tv-series/](https://gradientdescending.com/alone-r-package-datasets-from-the-survival-tv-series/)
 
-Examples of analyses are included in [Dan Oehm's blog post](https://gradientdescending.com/alone-r-package-datasets-from-the-survival-tv-series/).
+分析示例包含在[Dan Oehm的博客文章](https://gradientdescending.com/alone-r-package-datasets-from-the-survival-tv-series/)中。
 
 
-### Get the data here
+### 在此处获取数据
 
 ```{r}
 # Get the Data
