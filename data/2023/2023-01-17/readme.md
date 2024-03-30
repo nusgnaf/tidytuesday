@@ -1,79 +1,48 @@
-### Please add alt text to your posts
+# 艺术史
 
-Please add alt text (alternative text) to all of your posted graphics for `#TidyTuesday`. 
+本周的数据来自[arthistory数据包](https://saralemus7.github.io/arthistory/)
 
-Twitter provides [guidelines](https://help.twitter.com/en/using-twitter/picture-descriptions) for how to add alt text to your images.
+> 此数据集包含了 Holland Stam 的论文工作使用的数据，题为[Quantifying art historical narratives](https://research.repository.duke.edu/concern/datasets/q811kk70n?locale=en)。数据收集的目的是评估通过 Janson's History of Art 和 Gardner's Art Through the Ages 两本最受欢迎的艺术史教科书在美国教育系统中使用的艺术家的人口统计代表性。在这个包中，收集了艺术家级别和作品级别的数据，以及有关艺术家人口统计信息的变量和用于描述他们或他们的作品在每个教科书版本中占据了多少空间的数值指标。
 
-The DataViz Society/Nightingale by way of Amy Cesal has an [article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) on writing _good_ alt text for plots/graphs.
+> 此数据包包含三个数据集：
 
-> Here's a simple formula for writing alt text for data visualization:
-> ### Chart type
-> It's helpful for people with partial sight to know what chart type it is and gives context for understanding the rest of the visual.
-> Example: Line graph
-> ### Type of data
-> What data is included in the chart? The x and y axis labels may help you figure this out.
-> Example: number of bananas sold per day in the last year
-> ### Reason for including the chart
-> Think about why you're including this visual. What does it show that's meaningful. There should be a point to every visual and you should tell people what to look for.
-> Example: the winter months have more banana sales
-> ### Link to data or source
-> Don't include this in your alt text, but it should be included somewhere in the surrounding text. People should be able to click on a link to view the source data or dig further into the visual. This provides transparency about your source and lets people explore the data.
-> Example: Data from the USDA
+> * worksjanson：包含了从 1963 年到 2011 年的 Gardner's 艺术史教科书版本的单个作品级别数据。对于每个作品，都有关于作品大小和文本在教科书中的显示方式的信息，以及关于作品的媒介和创作年份的细节。还包括有关艺术家的人口统计数据。
 
-Penn State has an [article](https://accessibility.psu.edu/images/charts/) on writing alt text descriptions for charts and tables.
+> * worksgardner：包含了从 1926 年到 2020 年的 Gardner's 艺术史教科书版本的单个作品级别数据。对于每个作品，都有关于作品在教科书中显示方式的大小以及相应描述文本的大小的信息。还包括有关艺术家的人口统计数据。
 
-> Charts, graphs and maps use visuals to convey complex images to users. But since they are images, these media provide serious accessibility issues to colorblind users and users of screen readers. See the [examples on this page](https://accessibility.psu.edu/images/charts/) for details on how to make charts more accessible.
+> * artists：包含了从 1926 年到 2020 年的 Gardner 或 Janson's 艺术史教科书版本的艺术家的各种信息。数据包括人口统计信息、在教科书中占据的空间，以及在 MoMA 和 Whitney 博物馆中的存在。
 
-The `{rtweet}` package includes the [ability to post tweets](https://docs.ropensci.org/rtweet/reference/post_tweet.html) with alt text programatically.
+致谢 arthistory
 
-Need a **reminder**? There are [extensions](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related) that force you to remember to add Alt Text to Tweets with media.
-
-# Art History
-
-The data this week comes from the [arthistory data package](https://saralemus7.github.io/arthistory/)
-
-> This dataset contains data that was used for Holland Stam's thesis work, titled [Quantifying art historical narratives](https://research.repository.duke.edu/concern/datasets/q811kk70n?locale=en). The data was collected to assess the demographic representation of artists through editions of Janson's History of Art and Gardner's Art Through the Ages, two of the most popular art history textbooks used in the American education system. In this package specifically, both artist-level and work-level data was collected along with variables regarding the artists' demographics and numeric metrics for describing how much space they or their work took up in each edition of each textbook.
-
-> This package contains three datasets:
-
-> * worksjanson: Contains individual work-level data by edition of Gardner's art history textbook from 1963 until 2011. For each work, there is information about the size of the work and text as displayed in the textbook as well as details about the work's medium and year created. Demographic data about the artist is also included.
-
-> * worksgardner: Contains individual work-level data by edition of Gardner's art history textbook from 1926 until 2020. For each work, there is information about the size of the work as displayed in the textbook as well as the size of the accompanying descriptive text. Demographic data about the artist is also included.
-
-> * artists: Contains various information about artists by edition of Gardner or Janson's art history textbook from 1926 until 2020. Data includes demographic information, space occupied in the textbook, as well as presence in the MoMA and Whitney museums.
-
-Acknowledging arthistory
-
-> Citation
+> 引用
 
 > Lemus S, Stam H (2022). arthistory: Art History Textbook Data. https://github.com/saralemus7/arthistory, https://saralemus7.github.io/arthistory/.
 
-Examples of analyses are included in [Holland Stam's thesis](https://github.com/hollandstam1/thesis) in Quarto files.
+[Holland Stam's thesis](https://github.com/hollandstam1/thesis) 中包含了分析示例，以 Quarto 文件形式呈现。
 
 
-### Get the data here
+### 在此处获取数据
 
 ```{r}
-# Get the Data
+# 获取数据
 
-# Read in with tidytuesdayR package 
-# Install from CRAN via: install.packages("tidytuesdayR")
-# This loads the readme and all the datasets for the week of interest
+# 使用tidytuesdayR包读取
+# 通过CRAN安装：install.packages("tidytuesdayR")
+# 这将加载感兴趣周的自述文件和所有数据集
 
-# Either ISO-8601 date or year/week works!
+# ISO-8601日期或年/周均可使用！
 
 tuesdata <- tidytuesdayR::tt_load('2023-01-17')
 tuesdata <- tidytuesdayR::tt_load(2023, week = 03)
 
 arthistory <- tuesdata$arthistory
 
-# Or read in the data manually
+# 或者手动读取数据
 
 artists <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-01-17/artists.csv')
 
 ```
-### Data Dictionary
-
+### 数据字典
 
 # `artists.csv`
 
