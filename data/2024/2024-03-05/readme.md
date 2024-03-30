@@ -1,34 +1,34 @@
-# Trash Wheel Collection Data
+# 垃圾轮收集数据
 
-This week's data is [Trash Wheel Collection Data](https://docs.google.com/spreadsheets/d/1b8Lbe-z3PNb3H8nSsSjrwK2B0ReAblL2/edit#gid=1143432795) from the [Mr. Trash Wheel](https://www.mrtrashwheel.com/) [Baltimore Healthy Harbor](https://www.waterfrontpartnership.org/healthy-harbor-initiative) initiative.
+本周的数据来自[Mr. Trash Wheel](https://www.mrtrashwheel.com/) [巴尔的摩健康港](https://www.waterfrontpartnership.org/healthy-harbor-initiative)倡议的[垃圾轮收集数据](https://docs.google.com/spreadsheets/d/1b8Lbe-z3PNb3H8nSsSjrwK2B0ReAblL2/edit#gid=1143432795)。
 
-> Mr. Trash Wheel is a semi-autonomous trash interceptor that is placed at the end of a river, stream or other outfall. Far too lazy to chase trash around the ocean, Mr. Trash Wheel stays put and waits for the waste to flow to him. Sustainably powered and built to withstand the biggest storms, Mr. Trash Wheel uses a unique blend of solar and hydro power to pull hundreds of tons of trash out of the water each year.
+> Mr. Trash Wheel 是一种半自动的垃圾拦截器，放置在河流、溪流或其他出水口的尽头。Mr. Trash Wheel 懒得在海洋中追逐垃圾，他停在原地等待垃圾流过来。Mr. Trash Wheel 以可持续的能源驱动，并且经过设计能够经受住最大的风暴，利用太阳能和水力能源的独特结合每年清除水中数百吨的垃圾。
 
-The Healthy Harbor initiative has four Trash Wheels collecting trash. Mr. Trash Wheel was the first to start, and since then three more have joined the family. The Trash Wheel Family has collected more than 2,362 tons of trash. See more about [how Mr. Trash Wheel works](https://www.mrtrashwheel.com/technology/).
+健康港倡议有四个垃圾轮收集垃圾。Mr. Trash Wheel 是第一个开始的，从那时起又加入了另外三个。垃圾轮家族已经收集了超过2362吨的垃圾。了解更多有关[Mr. Trash Wheel如何工作的信息](https://www.mrtrashwheel.com/technology/)。
 
->Data collection methodology
+>数据收集方法
 
->1. When crew members are on the machine during the time when a dumpster is being filled, they will manually count the number of each of the item types listed on a single conveyor paddle. This process is repeated several times during the dumpster filling process. An average is then calculated for number of each item per paddle. The average is then multiplied by the paddle rate and then by the elapsed time to fill the dumpster.
+>1. 当机组人员在装载垃圾的过程中，他们会手动计数单个输送带托板上列出的每种物品的数量。在装满垃圾箱的过程中，这个过程会重复几次。然后计算每个托板上每种物品的平均数量。然后将平均数乘以托板速率，再乘以填满垃圾箱所需的时间。
 
->Example:
-> * Paddle #1- 9 plastic bottles
-> * Paddle #2- 14 plastic bottles
-> * Paddle #3- 5 plastic bottles
-> * Paddle #4- 12 plastic bottles
-> * Average = 10 plastic bottles/paddle
+>示例：
+> * 托板 #1- 9个塑料瓶
+> * 托板 #2- 14个塑料瓶
+> * 托板 #3- 5个塑料瓶
+> * 托板 #4- 12个塑料瓶
+> * 平均值 = 每个托板10个塑料瓶
 
->Conveyor speed = 2.5 paddles per minute therefore an average of 25 plastic bottles are loaded each minute. If it takes 100 minutes to fill the dumpster, we estimate that there are 2,500 bottles in that dumpster.
+>输送带速度 = 每分钟2.5个托板，因此每分钟平均装载25个塑料瓶。如果填满垃圾箱需要100分钟，我们估计该垃圾箱中有2500个瓶子。
 
->2. If no crew is present during the loading, we will take random bushel size samples of the collected material and count items in these samples. A full dumpster contains approximately 325 bushels. Therefore, if an average bushel sample from a dumpster contains 3 polystyrene containers, we estimate that the dumpster contains 975 polystyrene containers.
+>2. 如果在装载过程中没有机组人员在场，我们将对收集的物料进行随机的蓝筹样本，并计算这些样本中的物品数量。一个满垃圾箱大约含有325个蓝筹。因此，如果从垃圾箱中取出的平均蓝筹样本包含3个聚苯乙烯容器，我们估计该垃圾箱中有975个聚苯乙烯容器。
 
->3. Periodically “dumpster dives” are held where volunteers count everything in an entire dumpster. These events help validate our sampling methods and also look at what materials are dumpster. present that are not included in our sampling categories.
+>3. 定期进行“垃圾箱潜水”活动，志愿者会数一数整个垃圾箱中的所有东西。这些活动有助于验证我们的取样方法，并且还可以查看在我们的取样类别中未包含的存在的材料。
 
-What type of trash is collected the most? Do the different Trash Wheels collect different sets of trash? Are there times of the year when more or less trash is collected? 
+哪种类型的垃圾被收集得最多？不同的垃圾轮是否收集不同类型的垃圾？一年中是否有更多或更少的垃圾被收集？
 
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项 1: tidytuesdayR 包 
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2024-03-05')
@@ -38,19 +38,19 @@ tuesdata <- tidytuesdayR::tt_load(2024, week = 10)
 trashwheel <- tuesdata$trashwheel
 
 
-# Option 2: Read directly from GitHub
+# 选项 2: 直接从 GitHub 读取
 
 trashwheel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-03-05/trashwheel.csv')
 
 ```
 
-## How to Participate
+## 如何参与
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们要强调的是，您不应该在数据中得出**因果关系**的结论。影响所有数据的各种调节变量，其中许多可能没有在这些数据集中捕获。因此，我们建议您使用所提供的数据来练习数据整理和绘图技术，并自行考虑这些关系背后可能存在的细微差别。
+- 使用 R 或其他编程语言创建可视化、模型、[闪亮应用](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-### Data Dictionary
+### 数据字典
 
 # `trashwheel.csv`
 
@@ -74,7 +74,7 @@ trashwheel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience
 |HomesPowered   |double    |Homes Powered - Each ton of trash equates to on average 500 kilowatts of electricity.  An average household will use 30 kilowatts per day.   |
 
 
-### Cleaning Script
+### 数据清洗脚本
 
 ``` r
 library(tidyverse)
