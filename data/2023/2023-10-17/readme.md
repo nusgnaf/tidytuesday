@@ -1,43 +1,40 @@
-# Taylor Swift
+# 泰勒·斯威夫特
 
-Since [The Eras Tour Film](https://www.tstheerastourfilm.com/) was just released, this week we're exploring Taylor Swift song data! 
+由于[《The Eras Tour Film》](https://www.tstheerastourfilm.com/)刚刚发布，本周我们将探索泰勒·斯威夫特的歌曲数据！
 
-Are you Ready for It? 
+你准备好了吗？
 
-The [taylor](https://taylor.wjakethompson.com/) R package from W. Jake Thompson is a curated data set of Taylor Swift songs, including lyrics and audio characteristics. 
-The data comes from Genius and the Spotify API.
+W. Jake Thompson的[taylor](https://taylor.wjakethompson.com/) R包是一个由精选数据组成的泰勒·斯威夫特歌曲数据集，包括歌词和音频特征。数据来自Genius和Spotify API。
 
-There are three main datasets.
+主要有三个数据集。
 
-> The first is taylor_album_songs, which includes lyrics and audio features from the Spotify API for all songs on Taylor’s official studio albums. Notably this excludes singles released separately from an album (e.g., Only the Young, Christmas Tree Farm, etc.), and non-Taylor-owned albums that have a Taylor-owned alternative (e.g., Fearless is excluded in favor of Fearless (Taylor’s Version)). We stan artists owning their own songs.
+> 第一个是taylor_album_songs，其中包括泰勒正式录音室专辑中所有歌曲的歌词和来自Spotify API的音频特征。值得注意的是，这不包括单独发布的单曲（例如，Only the Young，Christmas Tree Farm等），以及非泰勒所有的专辑，其中存在泰勒所有的替代版本（例如，为了支持艺术家拥有自己的歌曲，Fearless被排除在外，取而代之的是Fearless（泰勒的版本））。
 
-> You can access Taylor’s entire discography with taylor_all_songs. This includes all of the songs in taylor_album_songs plus EPs, individual singles, and the original versions of albums that have been re-released as Taylor’s Version.
+> 您可以使用taylor_all_songs访问泰勒的整个唱片目录。这包括taylor_album_songs中的所有歌曲，以及EP、个别单曲和作为泰勒版本重新发行的专辑的原始版本。
 
-> Finally, there is a small data set, taylor_albums, summarizing Taylor’s album release history.
+> 最后，还有一个小数据集，taylor_albums，总结了泰勒的专辑发行历史。
 
-Information on the audio features in the dataset from Spotify are included in their [API documentation](https://developer.spotify.com/documentation/web-api/reference/get-audio-features).
+数据集中来自Spotify的音频特征的信息在他们的[API文档](https://developer.spotify.com/documentation/web-api/reference/get-audio-features)中有包含。
 
-For your visualizations, the {taylor} package comes with it’s own class of color palettes, inspired by the work of Josiah Parry in the [{cpcinema}](https://github.com/JosiahParry/cpcinema) package.
+对于您的可视化，{taylor}包提供了自己的一类颜色调色板，受到Josiah Parry在[{cpcinema}](https://github.com/JosiahParry/cpcinema)包中的工作的启发。
 
-You might also be interested in the [tayoRswift package](https://asteves.github.io/tayloRswift/) by Alex Stephenson, a ggplot2 color palette based on Taylor Swift album covers. "For when your colors absolutely should not be excluded from the narrative."
+您可能还对Alex Stephenson的[tayoRswift包](https://asteves.github.io/tayloRswift/)感兴趣，这是一个基于泰勒·斯威夫特专辑封面的ggplot2调色板。"当您的颜色绝对不应该被从叙事中排除时。"
 
-
-
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项1：tidytuesdayR 包
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2023-10-17')
-## OR
+## 或者
 tuesdata <- tidytuesdayR::tt_load(2023, week = 42)
 
 taylor_album_songs <- tuesdata$taylor_album_songs
 taylor_all_songs <- tuesdata$taylor_all_songs
 taylor_albums <- tuesdata$taylor_albums
 
-# Option 2: Read directly from GitHub
+# 选项2：直接从 GitHub 读取
 
 taylor_album_songs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-10-17/taylor_album_songs.csv')
 taylor_all_songs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-10-17/taylor_all_songs.csv')
@@ -45,14 +42,13 @@ taylor_albums <- readr::read_csv('https://raw.githubusercontent.com/rfordatascie
 
 ```
 
-## How to Participate
+## 参与方式
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们想强调的是，您不应在数据中得出关于**因果关系**的结论。有许多影响所有数据的调节变量，其中许多可能没有在这些数据集中捕获到。因此，我们建议您使用提供的数据来练习数据整理和绘图技术，并考虑自己可能潜在的这些关系背后的细微差别。
+- 使用R或其他编程语言创建可视化、模型、[闪亮应用](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-
-### Data Dictionary
+### 数据字典
 
 # `taylor_album_songs.csv`
 
