@@ -1,59 +1,29 @@
-### Please add alt text to your posts
+# 英国宠物猫
 
-Please add alt text (alternative text) to all of your posted graphics for `#TidyTuesday`. 
+本周的数据来自[动物追踪数据的Movebank](https://www.datarepository.movebank.org/handle/10255/move.882)，由[Data is Plural](https://themarkup.org/data-is-plural/2023/01/25/from-jazz-solos-to-cats-on-the-move#:~:text=Giuseppe%20Sollazzo%5D-,Cats%20on%20the%20move,-.%20Between%202013)提供。感谢@jthomasmock提出建议！
 
-Twitter provides [guidelines](https://help.twitter.com/en/using-twitter/picture-descriptions) for how to add alt text to your images.
+> 在2013年到2017年期间，Roland Kays等人说服了美国、英国、澳大利亚和新西兰的数百名志愿者为他们的宠物猫系上GPS传感器。上述链接的数据集包括每只猫的特征（如年龄、性别、绝育状态、捕猎习惯）和带有时间戳的GPS信号。
 
-The DataViz Society/Nightingale by way of Amy Cesal has an [article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) on writing _good_ alt text for plots/graphs.
-
-> Here's a simple formula for writing alt text for data visualization:
-> ### Chart type
-> It's helpful for people with partial sight to know what chart type it is and gives context for understanding the rest of the visual.
-> Example: Line graph
-> ### Type of data
-> What data is included in the chart? The x and y axis labels may help you figure this out.
-> Example: number of bananas sold per day in the last year
-> ### Reason for including the chart
-> Think about why you're including this visual. What does it show that's meaningful. There should be a point to every visual and you should tell people what to look for.
-> Example: the winter months have more banana sales
-> ### Link to data or source
-> Don't include this in your alt text, but it should be included somewhere in the surrounding text. People should be able to click on a link to view the source data or dig further into the visual. This provides transparency about your source and lets people explore the data.
-> Example: Data from the USDA
-
-Penn State has an [article](https://accessibility.psu.edu/images/charts/) on writing alt text descriptions for charts and tables.
-
-> Charts, graphs and maps use visuals to convey complex images to users. But since they are images, these media provide serious accessibility issues to colorblind users and users of screen readers. See the [examples on this page](https://accessibility.psu.edu/images/charts/) for details on how to make charts more accessible.
-
-The `{rtweet}` package includes the [ability to post tweets](https://docs.ropensci.org/rtweet/reference/post_tweet.html) with alt text programatically.
-
-Need a **reminder**? There are [extensions](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related) that force you to remember to add Alt Text to Tweets with media.
-
-# Pet Cats UK
-
-The data this week comes from the [Movebank for Animal Tracking Data](https://www.datarepository.movebank.org/handle/10255/move.882) via [Data is Plural](https://themarkup.org/data-is-plural/2023/01/25/from-jazz-solos-to-cats-on-the-move#:~:text=Giuseppe%20Sollazzo%5D-,Cats%20on%20the%20move,-.%20Between%202013). Thanks @jthomasmock for the suggestion!
-
-> Between 2013 and 2017, Roland Kays et al. convinced hundreds of volunteers in the U.S., U.K., Australia, and New Zealand to strap GPS sensors on their pet cats. The aforelinked datasets include each cat's characteristics (such as age, sex, neuter status, hunting habits) and time-stamped GPS pings.
-
-> When using this dataset, please cite the original article.
+> 使用此数据集时，请引用原始文章。
 
 > Kays R, Dunn RR, Parsons AW, Mcdonald B, Perkins T, Powers S, Shell L, McDonald JL, Cole H, Kikillus H, Woods L, Tindle H, Roetman P (2020) The small home ranges and large local ecological impacts of pet cats. Animal Conservation. [doi:10.1111/acv.12563](http://dx.doi.org/10.1111/acv.12563)
 
-> Additionally, please cite the Movebank data package:
+> 另外，请引用Movebank数据包：
 
 > McDonald JL, Cole H (2020) Data from: The small home ranges and large local ecological impacts of pet cats [United Kingdom]. Movebank Data Repository. [doi:10.5441/001/1.pf315732](http://dx.doi.org/10.5441/001/1.pf315732)
 
-Additional datasets for the [US](https://www.datarepository.movebank.org/handle/10255/move.885), [Australia](https://www.datarepository.movebank.org/handle/10255/move.876), and [New Zealand](https://www.datarepository.movebank.org/handle/10255/move.879) are also available for download, but they were too large for us to include them directly.
+美国](https://www.datarepository.movebank.org/handle/10255/move.885)、[澳大利亚](https://www.datarepository.movebank.org/handle/10255/move.876)和[新西兰](https://www.datarepository.movebank.org/handle/10255/move.879)的其他数据集也可供下载，但由于太大，我们无法直接包含它们。
 
-### Get the data here
+### 在此处获取数据
 
 ```{r}
-# Get the Data
+# 获取数据
 
-# Read in with tidytuesdayR package 
-# Install from CRAN via: install.packages("tidytuesdayR")
-# This loads the readme and all the datasets for the week of interest
+# 使用tidytuesdayR包读取
+# 通过CRAN安装：install.packages("tidytuesdayR")
+# 这将加载感兴趣周的自述文件和所有数据集
 
-# Either ISO-8601 date or year/week works!
+# 可以使用ISO-8601日期或年/周
 
 tuesdata <- tidytuesdayR::tt_load('2023-01-31')
 tuesdata <- tidytuesdayR::tt_load(2023, week = 5)
@@ -61,13 +31,13 @@ tuesdata <- tidytuesdayR::tt_load(2023, week = 5)
 cats_uk <- tuesdata$cats_uk
 cats_uk_reference <- tuesdata$cats_uk_reference
 
-# Or read in the data manually
+# 或者手动读取数据
 
 cats_uk <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-01-31/cats_uk.csv')
 cats_uk_reference <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-01-31/cats_uk_reference.csv')
 ```
 
-### Data Dictionary
+### 数据字典
 
 Full dictionaries are available on [Movebank](https://www.datarepository.movebank.org/handle/10255/move.882)
 
