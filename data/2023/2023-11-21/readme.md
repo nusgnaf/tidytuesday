@@ -1,14 +1,13 @@
-# R-Ladies Chapter Events
+# R-Ladies 分会活动
 
-R-Ladies Global is an inspiring story of community, empowerment, and diversity in the field of data science. Founded by Gabriela de Queiroz, R-Ladies began as a grassroots movement with a simple mission: to promote gender diversity in the R programming community and provide a welcoming space for women and gender minorities to learn, collaborate, and excel in data science. [R-Ladies Global Website](https://rladies.org/)
+R-Ladies Global 是数据科学领域一个鼓舞人心的社区、赋权和多样性的故事。由 Gabriela de Queiroz 创立，R-Ladies 开始于一场基层运动，其简单使命是：促进 R 编程社区的性别多样性，并为女性和性别少数群体提供一个友好的学习、合作和在数据科学中取得成功的空间。[R-Ladies Global 网站](https://rladies.org/)
 
-The data this week comes from [Federica Gazzelloni](https://github.com/Fgazzelloni)'s [presentation](https://youtu.be/EstytFNjrWc) on [R-Ladies Chapters: Making talks work for diverse audiences](https://github.com/Fgazzelloni/RLadies-Chapters-Making-Talks-Work-for-Diverse-Audiences/tree/main) with data from the [rladies meetup-archive](https://github.com/rladies/meetup_archive).
+本周的数据来自 [Federica Gazzelloni](https://github.com/Fgazzelloni) 的 [演示](https://youtu.be/EstytFNjrWc) [R-Ladies 分会：使演讲适合各种观众](https://github.com/Fgazzelloni/RLadies-Chapters-Making-Talks-Work-for-Diverse-Audiences/tree/main)，数据来自 [rladies meetup-archive](https://github.com/rladies/meetup_archive)。
 
-
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项1：tidytuesdayR包 
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2023-11-21')
@@ -17,19 +16,18 @@ tuesdata <- tidytuesdayR::tt_load(2023, week = 47)
 
 rladies_chapters <- tuesdata$rladies_chapters
 
-# Option 2: Read directly from GitHub
+# 选项2：直接从GitHub读取
 
 rladies_chapters <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-11-21/rladies_chapters.csv')
 ```
 
-## How to Participate
+## 如何参与
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们要强调的是，您不应该从数据中得出**因果关系**的结论。影响所有数据的各种调节变量很多，其中许多可能没有在这些数据集中捕获到。因此，我们建议您使用提供的数据来练习数据整理和绘图技术，并自行考虑这些关系背后可能存在的细微差别。
+- 使用R或其他编程语言创建可视化、模型、[Shiny应用](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-
-### Data Dictionary
+### 数据字典
 
 # `rladies_chapters.csv`
 
