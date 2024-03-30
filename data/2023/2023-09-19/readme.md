@@ -1,25 +1,24 @@
-# CRAN Package Authors
+# CRAN 软件包作者
 
-It's time for [posit::conf(2023L)](https://posit.co/conference/)!
-To celebrate, the data this week comes from the [CRAN collaboration graph](https://github.com/schochastics/CRAN_collaboration), a project by David Schoch.
+是时候迎接[posit::conf(2023L)](https://posit.co/conference/)了！
+为了庆祝，本周的数据来自[CRAN 协作图](https://github.com/schochastics/CRAN_collaboration)，这是David Schoch的一个项目。
 
-> The CRAN collaboration graph consists of R package developers who are connected if they appear together as authors of an R package in the DESCRIPTION file.
+> CRAN 协作图包括连接在一起的 R 软件包开发者，如果它们在 DESCRIPTION 文件中作为 R 软件包的作者一起出现。
 
-> The “Hadley number” is defined as the distance of R developers to Hadley Wickham in the collaboration graph. 
+> “Hadley 数”被定义为 R 开发者在协作图中与 Hadley Wickham 的距离。
 
-See the [README of the GitHub project](https://github.com/schochastics/CRAN_collaboration#readme) for a fun exploration of the data, and to see how it was gathered.
+请参阅[GitHub 项目的 README](https://github.com/schochastics/CRAN_collaboration#readme)以了解有关数据的有趣探索，以及数据是如何收集的。
 
-## The Data
+## 数据
 
 ```{r}
-# Scroll to the end of this code block to see how to recombine the data into a
-# graph!
+# 滚动到代码块的末尾，看到如何将数据重新组合成图形！
 
-# Option 1: tidytuesdayR package 
+# 选项1：tidytuesdayR 包
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2023-09-19')
-## OR
+## 或者
 tuesdata <- tidytuesdayR::tt_load(2023, week = 38)
 
 cran_20230905 <- tuesdata$cran_20230905
@@ -27,35 +26,34 @@ package_authors <- tuesdata$package_authors
 cran_graph_nodes <- tuesdata$cran_graph_nodes
 cran_graph_edges <- tuesdata$cran_graph_edges
 
-# Option 2: Read directly from GitHub
+# 选项2：直接从 GitHub 读取
 
 cran_20230905 <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-09-19/cran_20230905.csv')
 package_authors <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-09-19/package_authors.csv')
 cran_graph_nodes <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-09-19/cran_graph_nodes.csv')
 cran_graph_edges <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-09-19/cran_graph_edges.csv')
 
-# Reconstruct a graph
+# 重构图形
 library(tidygraph)
 cran_graph <- tbl_graph(
   nodes = cran_graph_nodes, edges = cran_graph_edges, directed = FALSE
 )
 
-# Fine a particular author in the graph.
+# 在图中找到特定的作者。
 target_author <- "Jon Harmon"
 target_author_index <- which(igraph::V(cran_graph)$name == target_author)
 
-# Extract that author's Hadley number.
+# 提取该作者的 Hadley 数。
 igraph::V(cran_graph)$dist2HW[target_author_index]
 ```
 
-## How to Participate
+## 参与方式
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们想强调的是，您不应在数据中得出关于**因果关系**的结论。有许多影响所有数据的调节变量，其中许多可能没有在这些数据集中捕获到。因此，我们建议您使用提供的数据来练习数据整理和绘图技术，并考虑自己可能潜在的这些关系背后的细微差别。
+- 使用R或其他编程语言创建可视化、模型、[闪亮应用](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-
-### Data Dictionary
+### 数据字典
 
 # `cran_20230905.csv`
 
