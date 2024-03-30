@@ -1,43 +1,42 @@
-# US Government Grant Opportunities
+# 美国政府资助机会
 
-The R4DS Online Learning Community is a community of learners at all skill levels working together to improve our data-science-related skills.
-We offer free data-related education through [book clubs](https://r4ds.io/youtube) and free live question-answering on our [Slack](https://r4ds.io/join), and by curating a dataset every week here at TidyTuesday.
+R4DS在线学习社区是一个由各技能水平的学习者组成的社区，共同努力提高我们的数据科学技能。
+我们通过[读书会](https://r4ds.io/youtube)提供免费的与数据相关的教育，并在我们的[Slack](https://r4ds.io/join)上进行免费的实时问答，并通过在TidyTuesday每周整理一个数据集来进行。
 
-We are now a fiscally sponsored project of Open Collective Foundation (https://opencollective.foundation), a 501(c)(3) public charity. 
-That means [donations to the R4DS Online Learning Community](https://r4ds.io/donate) are now tax-deductible in the US!
-It also means that we are now eligible for a number of grants, including some of the grants listed on [Grants.gov](https://www.grants.gov/web/grants/search-grants.html).
+我们现在是Open Collective Foundation（https://opencollective.foundation）的一个财务赞助项目，是一个501(c)(3)公益慈善组织。
+这意味着[对R4DS在线学习社区的捐款](https://r4ds.io/donate)现在在美国是可以抵税的！
+这也意味着我们现在有资格获得一些赠款，包括[Grants.gov](https://www.grants.gov/web/grants/search-grants.html)上列出的一些赠款。
 
-We have exported all grants past and present from that site, and we are making them available here for you to explore and visualize.
-We also scraped details for all posted grants.
-Please let us know if you find anything interesting!
+我们已经从该网站导出了所有过去和现在的赠款，并在这里提供给您探索和可视化。
+我们还抓取了所有发布赠款的详细信息。
+如果您发现有趣的内容，请告诉我们！
 
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项1：tidytuesdayR 包
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2023-10-03')
-## OR
+## 或者
 tuesdata <- tidytuesdayR::tt_load(2023, week = 40)
 
 grants <- tuesdata$grants
 grant_opportunity_details <- tuesdata$grant_opportunity_details
 
-# Option 2: Read directly from GitHub
+# 选项2：直接从 GitHub 读取
 
 grants <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-10-03/grants.csv')
 grant_opportunity_details <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-10-03/grant_opportunity_details.csv')
 ```
 
-## How to Participate
+## 参与方式
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们想强调的是，您不应在数据中得出关于**因果关系**的结论。有许多影响所有数据的调节变量，其中许多可能没有在这些数据集中捕获到。因此，我们建议您使用提供的数据来练习数据整理和绘图技术，并考虑自己可能潜在的这些关系背后的细微差别。
+- 使用R或其他编程语言创建可视化、模型、[闪亮应用](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-
-### Data Dictionary
+### 数据字典
 
 # `grants.csv`
 
