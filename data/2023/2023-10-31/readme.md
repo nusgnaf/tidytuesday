@@ -1,38 +1,36 @@
-# Horror Legends
+# 恐怖传说
 
-Happy Halloween! 
-To celebrate, this week we're exploring horror legends from [Snopes.com](https://www.snopes.com/)!
+万圣节快乐！为了庆祝，本周我们将探索来自[Snopes.com](https://www.snopes.com/)的恐怖传说！
 
-> Since urban legends are often a means of expressing our fears about the dangers that ripple just beneath the surface of our seemingly calm and untroubled world, it should come as no surprise that horror legends are one of urban folklore's richest veins. We worry about the terrible accidents we're powerless to prevent, and we fear anonymous killers who choose victims at random. We cannot protect ourselves from the venomous animals who slither undetected into the places where we work, play, and shop, nor can we stop the onslaught of insects who invade our homes and our bodies. We're repulsed by the contaminants that may lurk in our food. We're afraid of foreigners and foreign places. We fear for our childrens' safety in a world full of drugs, kidnappers, and poisons. We never know what gruesome discovery may be waiting around the next corner. And even if we somehow escape all of these horrors, our own vanities may do us in.
+> 由于都市传说通常是表达我们对似乎平静无波的世界表面下潜藏的危险的恐惧的一种方式，因此恐怖传说是都市民间传说中最丰富的内容之一并不足为奇。我们担心那些我们无力阻止的可怕事故，害怕那些随机选择受害者的无名杀手。我们无法保护自己免受悄悄潜入我们工作、玩耍和购物场所的有毒动物的侵害，也无法阻止昆虫的袭击，它们侵入我们的家园和我们的身体。我们对可能潜藏在我们食物中的污染物感到厌恶。我们害怕外国人和外国地方。我们担心孩子在充斥着毒品、绑架者和毒药的世界中的安全。我们永远不知道下一个拐角可能等待我们的是什么可怕的发现。即使我们设法逃脱了所有这些恐怖，我们自己的虚荣心也可能会毁了我们。
 
-You might want to dig into the details of the articles this week -- particularly if the rating is "mixture".
-Each observation includes the URL to that article, which you can open directly from R with the `utils::browseURL()` function.
+本周您可能希望深入了解文章的细节，特别是如果评级是“混合”。
+每个观察都包括到该文章的URL，您可以使用 `utils::browseURL()` 函数直接从R中打开它。
 
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项1：tidytuesdayR 包
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2023-10-31')
-## OR
+## 或者
 tuesdata <- tidytuesdayR::tt_load(2023, week = 44)
 
 horror_articles <- tuesdata$horror_articles
 
-# Option 2: Read directly from GitHub
+# 选项2：直接从 GitHub 读取
 
 horror_articles <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-10-31/horror_articles.csv')
 ```
 
-## How to Participate
+## 参与方式
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们想强调的是，您不应在数据中得出关于**因果关系**的结论。有许多影响所有数据的调节变量，其中许多可能没有在这些数据集中捕获到。因此，我们建议您使用提供的数据来练习数据整理和绘图技术，并考虑自己可能潜在的这些关系背后的细微差别。
+- 使用R或其他编程语言创建可视化、模型、[闪亮应用](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-
-### Data Dictionary
+### 数据字典
 
 # `horror_articles.csv`
 
