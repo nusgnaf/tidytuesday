@@ -1,21 +1,22 @@
-# R Consortium ISC Grants
+# R联盟基础设施指导委员会 (ISC) 拨款
 
-The R Consortium Infrastructure Steering Committee (ISC) Grant Program will accept proposals again between March 1 and April 1, 2024 (and then again in the fall).
+R联盟基础设施指导委员会(ISC)拨款计划将于2024年3月1日至4月1日再次接受提案（然后在秋季再次接受）。
 
-> This initiative is a cornerstone of our commitment to bolstering and enhancing the R Ecosystem. We fund projects contributing to the R community’s technical and social infrastructures.
+> 这项举措是我们致力于加强和改进R生态系统的基石。我们资助为R社区的技术和社会基础设施做出贡献的项目。
 
-Learn more in [their blog post announcing this round of grants](https://www.r-consortium.org/blog/2024/02/08/r-consortium-infrastructure-steering-committee-isc-grant-program-accepting-proposals-starting-march-1st).
+在[他们宣布这一轮拨款的博文](https://www.r-consortium.org/blog/2024/02/08/r-consortium-infrastructure-steering-committee-isc-grant-program-accepting-proposals-starting-march-1st)中了解更多。
 
-The R Consortium ISC has been awarding grants since 2016.
-This week's data is an exploration of past grant recipients.
+自2016年以来，R联盟ISC一直在授予拨款。
 
-Are there any keywords that stand out in the titles or summaries of awarded grants?
-Have the funded amounts changed over time?
+本周的数据是对过去拨款受益者的探索。
 
-## The Data
+有哪些关键词在获奖拨款的标题或摘要中显著？
+拨款金额随时间变化了吗？
+
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项 1: tidytuesdayR 包 
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2024-02-20')
@@ -24,18 +25,18 @@ tuesdata <- tidytuesdayR::tt_load(2024, week = 8)
 
 isc_grants <- tuesdata$isc_grants
 
-# Option 2: Read directly from GitHub
+# 选项 2: 直接从 GitHub 读取
 
 isc_grants <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-02-20/isc_grants.csv')
 ```
 
-## How to Participate
+## 如何参与
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们要强调的是，您不应该在数据中得出**因果关系**的结论。影响所有数据的各种调节变量，其中许多可能没有在这些数据集中捕获。因此，我们建议您使用所提供的数据来练习数据整理和绘图技术，并自行考虑这些关系背后可能存在的细微差别。
+- 使用 R 或其他编程语言创建可视化、模型、[闪亮应用](https://shiny.posit.co/)或其他与数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-### Data Dictionary
+### 数据字典
 
 # `isc_grants.csv`
 
@@ -49,7 +50,7 @@ isc_grants <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience
 |summary     |character |A description of the project. |
 |website     |character |The website associated with the project, if available. |
 
-### Cleaning Script
+### 数据清洗脚本
 
 ``` r
 library(tidyverse)
