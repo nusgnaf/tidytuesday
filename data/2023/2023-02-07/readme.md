@@ -1,53 +1,23 @@
-### Please add alt text to your posts
+# 大科技股票价格
 
-Please add alt text (alternative text) to all of your posted graphics for `#TidyTuesday`. 
+本周的数据来自[Kaggle](https://www.kaggle.com/datasets/evangower/big-tech-stock-prices)（由[Evan Gower](https://github.com/rfordatascience/tidytuesday/issues/509)提供），数据来源于Yahoo Finance。
 
-Twitter provides [guidelines](https://help.twitter.com/en/using-twitter/picture-descriptions) for how to add alt text to your images.
+> 此数据集包含了14家不同科技公司的日股票价格和成交量，包括苹果（AAPL）、亚马逊（AMZN）、谷歌母公司（GOOGL）、Meta Platforms（META）等等！
 
-The DataViz Society/Nightingale by way of Amy Cesal has an [article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) on writing _good_ alt text for plots/graphs.
+许多文章都研究了“大科技”股票价格的崩溃，包括[morningstar.com的这篇文章](https://www.morningstar.com/articles/1129535/5-charts-on-big-tech-stocks-collapse)。
 
-> Here's a simple formula for writing alt text for data visualization:
-> ### Chart type
-> It's helpful for people with partial sight to know what chart type it is and gives context for understanding the rest of the visual.
-> Example: Line graph
-> ### Type of data
-> What data is included in the chart? The x and y axis labels may help you figure this out.
-> Example: number of bananas sold per day in the last year
-> ### Reason for including the chart
-> Think about why you're including this visual. What does it show that's meaningful. There should be a point to every visual and you should tell people what to look for.
-> Example: the winter months have more banana sales
-> ### Link to data or source
-> Don't include this in your alt text, but it should be included somewhere in the surrounding text. People should be able to click on a link to view the source data or dig further into the visual. This provides transparency about your source and lets people explore the data.
-> Example: Data from the USDA
+注意：所有的`stock_symbol`都有3271个价格，除了META（2688个）和TSLA（3148个），因为它们在检查期间的部分时间内没有公开交易。
 
-Penn State has an [article](https://accessibility.psu.edu/images/charts/) on writing alt text descriptions for charts and tables.
-
-> Charts, graphs and maps use visuals to convey complex images to users. But since they are images, these media provide serious accessibility issues to colorblind users and users of screen readers. See the [examples on this page](https://accessibility.psu.edu/images/charts/) for details on how to make charts more accessible.
-
-The `{rtweet}` package includes the [ability to post tweets](https://docs.ropensci.org/rtweet/reference/post_tweet.html) with alt text programatically.
-
-Need a **reminder**? There are [extensions](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related) that force you to remember to add Alt Text to Tweets with media.
-
-# Big Tech Stock Prices
-
-The data this week comes from Yahoo Finance via [Kaggle](https://www.kaggle.com/datasets/evangower/big-tech-stock-prices) (by [Evan Gower](https://github.com/rfordatascience/tidytuesday/issues/509)).
-
-> This dataset consists of the daily stock prices and volume of 14 different tech companies, including Apple (AAPL), Amazon (AMZN), Alphabet (GOOGL), and Meta Platforms (META) and more!
-
-A number of articles have examined the collapse of "Big Tech" stock prices, including [this article from morningstar.com](https://www.morningstar.com/articles/1129535/5-charts-on-big-tech-stocks-collapse).
-
-Note: All `stock_symbol`s have 3271 prices, except META (2688) and TSLA (3148) because they were not publicly traded for part of the period examined.
-
-### Get the data here
+### 在此处获取数据
 
 ```{r}
-# Get the Data
+# 获取数据
 
-# Read in with tidytuesdayR package 
-# Install from CRAN via: install.packages("tidytuesdayR")
-# This loads the readme and all the datasets for the week of interest
+# 使用tidytuesdayR包读取
+# 通过CRAN安装：install.packages("tidytuesdayR")
+# 这将加载感兴趣周的自述文件和所有数据集
 
-# Either ISO-8601 date or year/week works!
+# 可以使用ISO-8601日期或年/周
 
 tuesdata <- tidytuesdayR::tt_load('2023-02-07')
 tuesdata <- tidytuesdayR::tt_load(2023, week = 6)
@@ -55,13 +25,13 @@ tuesdata <- tidytuesdayR::tt_load(2023, week = 6)
 big_tech_stock_prices <- tuesdata$big_tech_stock_prices
 big_tech_companies <- tuesdata$big_tech_companies
 
-# Or read in the data manually
+# 或者手动读取数据
 
 big_tech_stock_prices <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-02-07/big_tech_stock_prices.csv')
 big_tech_companies <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-02-07/big_tech_companies.csv')
 ```
 
-### Data Dictionary
+### 数据字典
 
 # `big_tech_stock_prices.csv`
 
