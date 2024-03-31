@@ -1,49 +1,19 @@
-### Please add alt text to your posts
+# 时区
 
-Please add alt text (alternative text) to all of your posted graphics for `#TidyTuesday`. 
+本周的数据来自[IANA tz数据库](https://data.iana.org/time-zones/tz-link.html)，通过 {[clock](https://clock.r-lib.org/)} 和 {[tzdb](https://tzdb.r-lib.org/)} 包。特别感谢 [Davis Vaughan](https://twitter.com/dvaughan32/status/1639281179433074692) 协助准备这些数据！
 
-Twitter provides [guidelines](https://help.twitter.com/en/using-twitter/picture-descriptions) for how to add alt text to your images.
+许多网站使用IANA tz数据库中的数据。[timeanddate.com](https://www.timeanddate.com/) 的 ["什么是夏令时"](https://www.timeanddate.com/time/dst/) 是查找有关时区的有趣信息的好地方，比如 [澳大利亚的豪礁岛](https://www.timeanddate.com/time/time-zones-interesting.html#:~:text=Lord%20Howe%20Island%3A%20UTC%20%2B10%3A30%20/%20%2B11%3A00) 的奇特情况。
 
-The DataViz Society/Nightingale by way of Amy Cesal has an [article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) on writing _good_ alt text for plots/graphs.
-
-> Here's a simple formula for writing alt text for data visualization:
-> ### Chart type
-> It's helpful for people with partial sight to know what chart type it is and gives context for understanding the rest of the visual.
-> Example: Line graph
-> ### Type of data
-> What data is included in the chart? The x and y axis labels may help you figure this out.
-> Example: number of bananas sold per day in the last year
-> ### Reason for including the chart
-> Think about why you're including this visual. What does it show that's meaningful. There should be a point to every visual and you should tell people what to look for.
-> Example: the winter months have more banana sales
-> ### Link to data or source
-> Don't include this in your alt text, but it should be included somewhere in the surrounding text. People should be able to click on a link to view the source data or dig further into the visual. This provides transparency about your source and lets people explore the data.
-> Example: Data from the USDA
-
-Penn State has an [article](https://accessibility.psu.edu/images/charts/) on writing alt text descriptions for charts and tables.
-
-> Charts, graphs and maps use visuals to convey complex images to users. But since they are images, these media provide serious accessibility issues to colorblind users and users of screen readers. See the [examples on this page](https://accessibility.psu.edu/images/charts/) for details on how to make charts more accessible.
-
-The `{rtweet}` package includes the [ability to post tweets](https://docs.ropensci.org/rtweet/reference/post_tweet.html) with alt text programatically.
-
-Need a **reminder**? There are [extensions](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related) that force you to remember to add Alt Text to Tweets with media.
-
-# Time Zones
-
-The data this week comes from the [IANA tz database](https://data.iana.org/time-zones/tz-link.html) via the {[clock](https://clock.r-lib.org/)} and {[tzdb](https://tzdb.r-lib.org/)} packages. Special thanks to [Davis Vaughan for the assist in preparing this data](https://twitter.com/dvaughan32/status/1639281179433074692)!
-
-Many websites operate using the data in the IANA tz database. ["What Is Daylight Saving Time"](https://www.timeanddate.com/time/dst/) from [timeanddate.com]("https://www.timeanddate.com/") is a good place to start to find interesting information about time zones, such as the strange case of [Lord Howe Island, Australia](https://www.timeanddate.com/time/time-zones-interesting.html#:~:text=Lord%20Howe%20Island%3A%20UTC%20%2B10%3A30%20/%20%2B11%3A00).
-
-### Get the data here
+### 在此处获取数据
 
 ```{r}
-# Get the Data
+# 获取数据
 
-# Read in with tidytuesdayR package 
-# Install from CRAN via: install.packages("tidytuesdayR")
-# This loads the readme and all the datasets for the week of interest
+# 使用 tidytuesdayR 包读取
+# 通过 CRAN 安装：install.packages("tidytuesdayR")
+# 这将加载感兴趣周的自述文件和所有数据集
 
-# Either ISO-8601 date or year/week works!
+# 可以使用 ISO-8601 日期或年/周
 
 tuesdata <- tidytuesdayR::tt_load('2023-03-28')
 tuesdata <- tidytuesdayR::tt_load(2023, week = 13)
@@ -53,7 +23,7 @@ timezones <- tuesdata$timezones
 timezone_countries <- tuesdata$timezone_countries
 countries <- tuesdata$countries
 
-# Or read in the data manually
+# 或者手动读取数据
 
 transitions <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-03-28/transitions.csv')
 timezones <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-03-28/timezones.csv')
@@ -61,7 +31,7 @@ timezone_countries <- readr::read_csv('https://raw.githubusercontent.com/rfordat
 countries <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-03-28/countries.csv')
 ```
 
-### Data Dictionary
+### 数据字典
 
 # `transitions.csv`
 
