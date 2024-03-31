@@ -1,31 +1,31 @@
-# Hot Ones Episodes 
+# *Hot Ones* 节目集数
 
-The data this week comes from Wikipedia articles: [*Hot Ones*](https://en.wikipedia.org/wiki/Hot_Ones) and [List of Hot Ones episodes](https://en.wikipedia.org/wiki/List_of_Hot_Ones_episodes). Thank you to [Carl Börstell](https://github.com/borstell) for the [suggestion and cleaning script](https://github.com/rfordatascience/tidytuesday/issues/591)!
+本周的数据来源于维基百科文章：[*Hot Ones*](https://en.wikipedia.org/wiki/Hot_Ones) 和 [Hot Ones 节目集列表](https://en.wikipedia.org/wiki/List_of_Hot_Ones_episodes)。感谢 [Carl Börstell](https://github.com/borstell) 提供了 [建议和清理脚本](https://github.com/rfordatascience/tidytuesday/issues/591)！
 
-> Hot Ones is an American YouTube talk show, created by Chris Schonberger, hosted by Sean Evans and produced by First We Feast and Complex Media. Its basic premise involves celebrities being interviewed by Evans over a platter of increasingly spicy chicken wings.
+> *Hot Ones* 是一档美国 YouTube 脱口秀节目，由 Chris Schonberger 创造，由 Sean Evans 主持，由 First We Feast 和 Complex Media 制作。其基本设定是名人在一盘盘越来越辣的鸡翅旁接受 Evans 的采访。
 
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项 1: tidytuesdayR 包 
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2023-08-08')
-## OR
+## 或者
 tuesdata <- tidytuesdayR::tt_load(2023, week = 32)
 
 episodes <- tuesdata$episodes
 sauces <- tuesdata$sauces
 seasons <- tuesdata$seasons
 
-# Option 2: Read directly from GitHub
+# 选项 2: 直接从 GitHub 读取
 
 episodes <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/episodes.csv')
 sauces <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/sauces.csv')
 seasons <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-08/seasons.csv')
 ```
 
-### Data Dictionary
+### 数据字典
 
 # `episodes.csv`
 
