@@ -1,74 +1,27 @@
-### Please add alt text to your posts
+# 全球表面温度
 
-Please add alt text (alternative text) to all of your posted graphics
-for `#TidyTuesday`.
+本周的数据来自[NASA GISS表面温度分析（GISTEMP v4）](https://data.giss.nasa.gov/gistemp/)。这些数据集是全球和半球月平均值和纬向年平均值的表格。它们结合了陆地表面、空气和海表面水温异常（陆海温度指数，L-OTI）。表中的值是相对于1951-1980年的对应值的偏差。
 
-Twitter provides
-[guidelines](https://help.twitter.com/en/using-twitter/picture-descriptions)
-for how to add alt text to your images.
+> GISS表面温度分析版本4（GISTEMP v4）是全球表面温度变化的估计值。图表每月中旬更新一次，使用来自NOAA GHCN v4（气象站）和ERSST v5（海洋区域）的当前数据文件，组合方式如他们的出版物Hansen等人（2010年）和Lenssen等人（2019年）所描述的。这些更新的文件包含上个月的报告，以及以前月份的迟报和更正。
 
-The DataViz Society/Nightingale by way of Amy Cesal has an
-[article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
-on writing *good* alt text for plots/graphs.
+> 在比较季节温度时，使用基于温度的“气象季节”是方便的，定义为整月的分组。因此，12月至1月至2月（DJF）是北半球气象冬季，3月至4月至5月（MAM）是北半球气象春季，6月至7月至8月（JJA）是北半球气象夏季，9月至10月至11月（SON）是北半球气象秋季。将这四个季节串在一起，您就得到了从12月1日开始，到11月30日结束的气象年（D-N）。整个年度是1月到12月（J-D）。[Brian Bartling](https://rpubs.com/BrianBartling/GISTEMP)
 
-> Here's a simple formula for writing alt text for data visualization:
-> \### Chart type It's helpful for people with partial sight to know
-> what chart type it is and gives context for understanding the rest of
-> the visual. Example: Line graph \### Type of data What data is
-> included in the chart? The x and y axis labels may help you figure
-> this out. Example: number of bananas sold per day in the last year
-> \### Reason for including the chart Think about why you're including
-> this visual. What does it show that's meaningful. There should be a
-> point to every visual and you should tell people what to look for.
-> Example: the winter months have more banana sales \### Link to data or
-> source Don't include this in your alt text, but it should be included
-> somewhere in the surrounding text. People should be able to click on a
-> link to view the source data or dig further into the visual. This
-> provides transparency about your source and lets people explore the
-> data. Example: Data from the USDA
+可以在Lenssen, N., G. Schmidt, J. Hansen, M. Menne, A. Persin, R. Ruedy, 和 D. Zyss, 2019: Improvements in the GISTEMP uncertainty model. J. Geophys. Res. Atmos., 124, no. 12, 6307-6326, doi:10.1029/2018JD029522 中找到对数据的分析和更多信息。
 
-Penn State has an
-[article](https://accessibility.psu.edu/images/charts/) on writing alt
-text descriptions for charts and tables.
+在[常见问题解答](https://data.giss.nasa.gov/gistemp/faq/)中也有更多详细信息和常见问题的答案。
 
-> Charts, graphs and maps use visuals to convey complex images to users.
-> But since they are images, these media provide serious accessibility
-> issues to colorblind users and users of screen readers. See the
-> [examples on this page](https://accessibility.psu.edu/images/charts/)
-> for details on how to make charts more accessible.
+引用：GISS表面温度分析团队，2023年：GISS表面温度分析（GISTEMP），版本4。NASA Goddard Institute for Space Studies。数据集于2023年07月09日从https://data.giss.nasa.gov/gistemp/获取。
 
-The `{rtweet}` package includes the [ability to post
-tweets](https://docs.ropensci.org/rtweet/reference/post_tweet.html) with
-alt text programatically.
-
-Need a **reminder**? There are
-[extensions](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related)
-that force you to remember to add Alt Text to Tweets with media.
-
-# Global surface temperatures 
-
-The data this week comes from the [NASA GISS Surface Temperature Analysis (GISTEMP v4)](https://data.giss.nasa.gov/gistemp/). This datasets are tables of global and hemispheric monthly means and zonal annual means. They combine land-surface, air and sea-surface water temperature anomalies (Land-Ocean Temperature Index, L-OTI). The values in the tables are deviations from the corresponding 1951-1980 means.
-
-> The GISS Surface Temperature Analysis version 4 (GISTEMP v4) is an estimate of global surface temperature change. Graphs and tables are updated around the middle of every month using current data files from NOAA GHCN v4 (meteorological stations) and ERSST v5 (ocean areas), combined as described in their publications Hansen et al. (2010) and Lenssen et al. (2019). These updated files incorporate reports for the previous month and also late reports and corrections for earlier months.
-
-> When comparing seasonal temperatures, it is convenient to use “meteorological seasons” based on temperature and defined as groupings of whole months. Thus, Dec-Jan-Feb (DJF) is the Northern Hemisphere meteorological winter, Mar-Apr-May (MAM) is N.H. meteorological spring, Jun-Jul-Aug (JJA) is N.H. meteorological summer and Sep-Oct-Nov (SON) is N.H. meteorological autumn. String these four seasons together and you have the meteorological year that begins on Dec. 1 and ends on Nov. 30 (D-N). The full year is Jan to Dec (J-D). [Brian Bartling](https://rpubs.com/BrianBartling/GISTEMP)
-
-An analysis and more information on the data can be found in Lenssen, N., G. Schmidt, J. Hansen, M. Menne, A. Persin, R. Ruedy, and D. Zyss, 2019: Improvements in the GISTEMP uncertainty model. J. Geophys. Res. Atmos., 124, no. 12, 6307-6326, doi:10.1029/2018JD029522. 
-
-There's also more detail and answers to commonly asked in questions in [their FAQ](https://data.giss.nasa.gov/gistemp/faq/).
-
-Citation: GISTEMP Team, 2023: GISS Surface Temperature Analysis (GISTEMP), version 4. NASA Goddard Institute for Space Studies. Dataset accessed 2023-07-09 at https://data.giss.nasa.gov/gistemp/.
-
-### Get the data here
+### 在这里获取数据
 
 ```{r}
-# Get the Data
+# 获取数据
 
-# Read in with tidytuesdayR package 
-# Install from CRAN via: install.packages("tidytuesdayR")
-# This loads the readme and all the datasets for the week of interest
+# 使用tidytuesdayR包读取数据
+# 通过CRAN安装：install.packages("tidytuesdayR")
+# 这将加载本周感兴趣的readme和所有数据集
 
-# Either ISO-8601 date or year/week works!
+# ISO-8601日期或年/周都可以使用！
 
 tuesdata <- tidytuesdayR::tt_load('2023-07-11')
 tuesdata <- tidytuesdayR::tt_load(2023, week = 28)
@@ -78,7 +31,7 @@ nh_temps <- tuesdata$nh_temps
 sh_temps <- tuesdata$sh_temps
 zonann_temps <- tuesdata$zonann_temps
 
-# Or read in the data manually
+# 或者手动读取数据
 
 global_temps <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-07-11/global_temps.csv')
 nh_temps <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-07-11/nh_temps.csv')
@@ -87,7 +40,7 @@ zonann_temps <- readr::read_csv('https://raw.githubusercontent.com/rfordatascien
 
 ```
 
-### Data Dictionary
+### 数据字典
 
 # `global_temps.csv`
 
