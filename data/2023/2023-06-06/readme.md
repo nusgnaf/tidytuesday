@@ -1,82 +1,35 @@
-### Please add alt text to your posts
+# 能源数据
 
-Please add alt text (alternative text) to all of your posted graphics
-for `#TidyTuesday`.
+本周的数据来自 Our World in Data 的 [Energy Data Explorer](https://ourworldindata.org/explorers/energy)。完整数据集可通过 [https://github.com/owid/energy-data](https://github.com/owid/energy-data) 获取。
 
-Twitter provides
-[guidelines](https://help.twitter.com/en/using-twitter/picture-descriptions)
-for how to add alt text to your images.
+> 完整的能源数据集是由 Our World in Data 维护的一组关键指标。它定期更新，包括能源消费（初级能源、人均消费和增长率）、能源结构、电力结构和其他相关指标的数据。
 
-The DataViz Society/Nightingale by way of Amy Cesal has an
-[article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
-on writing *good* alt text for plots/graphs.
+> 这些数据是由 Hannah Ritchie、Pablo Rosado、Edouard Mathieu 和 Max Roser 收集、汇总和记录的。
 
-> Here's a simple formula for writing alt text for data visualization:
-> \### Chart type It's helpful for people with partial sight to know
-> what chart type it is and gives context for understanding the rest of
-> the visual. Example: Line graph \### Type of data What data is
-> included in the chart? The x and y axis labels may help you figure
-> this out. Example: number of bananas sold per day in the last year
-> \### Reason for including the chart Think about why you're including
-> this visual. What does it show that's meaningful. There should be a
-> point to every visual and you should tell people what to look for.
-> Example: the winter months have more banana sales \### Link to data or
-> source Don't include this in your alt text, but it should be included
-> somewhere in the surrounding text. People should be able to click on a
-> link to view the source data or dig further into the visual. This
-> provides transparency about your source and lets people explore the
-> data. Example: Data from the USDA
+> [Our World in Data](https://ourworldindata.org/about) 使世界上最大的问题的数据和研究变得易于理解和获取。
 
-Penn State has an
-[article](https://accessibility.psu.edu/images/charts/) on writing alt
-text descriptions for charts and tables.
-
-> Charts, graphs and maps use visuals to convey complex images to users.
-> But since they are images, these media provide serious accessibility
-> issues to colorblind users and users of screen readers. See the
-> [examples on this page](https://accessibility.psu.edu/images/charts/)
-> for details on how to make charts more accessible.
-
-The `{rtweet}` package includes the [ability to post
-tweets](https://docs.ropensci.org/rtweet/reference/post_tweet.html) with
-alt text programatically.
-
-Need a **reminder**? There are
-[extensions](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related)
-that force you to remember to add Alt Text to Tweets with media.
-
-# Energy Data
-
-The data this week comes from Our World in Data's [Energy Data Explorer](https://ourworldindata.org/explorers/energy). Complete dataset available via [https://github.com/owid/energy-data](https://github.com/owid/energy-data).
-
-> The complete Energy dataset is a collection of key metrics maintained by Our World in Data. It is updated regularly and includes data on energy consumption (primary energy, per capita, and growth rates), energy mix, electricity mix and other relevant metrics.
-
->This data has been collected, aggregated, and documented by Hannah Ritchie, Pablo Rosado, Edouard Mathieu, Max Roser.
-
->[Our World in Data](https://ourworldindata.org/about) makes data and research on the world's largest problems understandable and accessible. 
-
-### Get the data here
+### 在这里获取数据
 
 ```{r}
-# Get the Data
+# 获取数据
 
-# Read in with tidytuesdayR package 
-# Install from CRAN via: install.packages("tidytuesdayR")
-# This loads the readme and all the datasets for the week of interest
+# 使用tidytuesdayR包读取数据
+# 通过CRAN安装：install.packages("tidytuesdayR")
+# 这将加载本周感兴趣的readme和所有数据集
 
-# Either ISO-8601 date or year/week works!
+# ISO-8601日期或年/周都可以使用！
 
 tuesdata <- tidytuesdayR::tt_load('2023-06-06')
 tuesdata <- tidytuesdayR::tt_load(2023, week = 23)
 
 owid_energy <- tuesdata$`owid-energy`
 
-# Or read in the data manually
+# 或者手动读取数据
 
 owid_energy <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-06/owid-energy.csv')
 ```
 
-### Data Dictionary
+### 数据字典
 
 # `owid-energy.csv`
 
