@@ -1,67 +1,20 @@
-### Please add alt text to your posts
+# 历史标志
 
-Please add alt text (alternative text) to all of your posted graphics
-for `#TidyTuesday`.
+本周的数据来自[美国历史标志数据库索引](https://www.hmdb.org/geolists.asp?c=United%20States%20of%20America)。在[HMDb.org网站](https://www.hmdb.org/)上了解更多关于这些标志的信息，其中包括一些文章，包括[数据库计数和统计信息](https://www.hmdb.org/stats.asp)。
 
-Twitter provides
-[guidelines](https://help.twitter.com/en/using-twitter/picture-descriptions)
-for how to add alt text to your images.
+我们还包含了一些在历史标志数据库中没有条目的地点的数据集。
+您可以尝试将其与[geonames.org](http://www.geonames.org/)（代码：HSTS）的信息结合起来，以找到需要提交的标志。感谢[Jesus M. Castagnetto](https://github.com/rfordatascience/tidytuesday/issues/574#issuecomment-1601050053) 提供的 geonames 提示！
 
-The DataViz Society/Nightingale by way of Amy Cesal has an
-[article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
-on writing *good* alt text for plots/graphs.
-
-> Here's a simple formula for writing alt text for data visualization:
-> \### Chart type It's helpful for people with partial sight to know
-> what chart type it is and gives context for understanding the rest of
-> the visual. Example: Line graph \### Type of data What data is
-> included in the chart? The x and y axis labels may help you figure
-> this out. Example: number of bananas sold per day in the last year
-> \### Reason for including the chart Think about why you're including
-> this visual. What does it show that's meaningful. There should be a
-> point to every visual and you should tell people what to look for.
-> Example: the winter months have more banana sales \### Link to data or
-> source Don't include this in your alt text, but it should be included
-> somewhere in the surrounding text. People should be able to click on a
-> link to view the source data or dig further into the visual. This
-> provides transparency about your source and lets people explore the
-> data. Example: Data from the USDA
-
-Penn State has an
-[article](https://accessibility.psu.edu/images/charts/) on writing alt
-text descriptions for charts and tables.
-
-> Charts, graphs and maps use visuals to convey complex images to users.
-> But since they are images, these media provide serious accessibility
-> issues to colorblind users and users of screen readers. See the
-> [examples on this page](https://accessibility.psu.edu/images/charts/)
-> for details on how to make charts more accessible.
-
-The `{rtweet}` package includes the [ability to post
-tweets](https://docs.ropensci.org/rtweet/reference/post_tweet.html) with
-alt text programatically.
-
-Need a **reminder**? There are
-[extensions](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related)
-that force you to remember to add Alt Text to Tweets with media.
-
-# Historical Markers
-
-The data this week comes from the [Historical Marker Database USA Index](https://www.hmdb.org/geolists.asp?c=United%20States%20of%20America). Learn more about the markers on the [HMDb.org site](https://www.hmdb.org/), which includes a number of articles, including [Database Counts and Statistics](https://www.hmdb.org/stats.asp).
-
-We included a dataset of places that do *not* have entries in the Historical Markers Database.
-You might try to combine that with information from [geonames.org](http://www.geonames.org/) (code: HSTS) to find markers that need to be submitted. Thanks to [Jesus M. Castagnetto](https://github.com/rfordatascience/tidytuesday/issues/574#issuecomment-1601050053) for the geonames tip!
-
-### Get the data here
+### 在这里获取数据
 
 ```{r}
-# Get the Data
+# 获取数据
 
-# Read in with tidytuesdayR package 
-# Install from CRAN via: install.packages("tidytuesdayR")
-# This loads the readme and all the datasets for the week of interest
+# 使用tidytuesdayR包读取数据
+# 通过CRAN安装：install.packages("tidytuesdayR")
+# 这将加载本周感兴趣的readme和所有数据集
 
-# Either ISO-8601 date or year/week works!
+# ISO-8601日期或年/周都可以使用！
 
 tuesdata <- tidytuesdayR::tt_load('2023-07-04')
 tuesdata <- tidytuesdayR::tt_load(2023, week = 27)
@@ -69,13 +22,13 @@ tuesdata <- tidytuesdayR::tt_load(2023, week = 27)
 historical_markers <- tuesdata$`historical_markers`
 no_markers <- tuesdata$`no_markers`
 
-# Or read in the data manually
+# 或者手动读取数据
 
 historical_markers <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-07-04/historical_markers.csv')
 no_markers <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-07-04/no_markers.csv')
 ```
 
-### Data Dictionary
+### 数据字典
 
 # `historical_markers.csv`
 
