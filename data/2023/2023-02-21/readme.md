@@ -1,69 +1,37 @@
-### Please add alt text to your posts
+# 鲍勃·罗斯的绘画作品
 
-Please add alt text (alternative text) to all of your posted graphics for `#TidyTuesday`. 
+本周的数据来自Jared Wilber的[Bob Ross Paintings](https://github.com/jwilber/Bob_Ross_Paintings/blob/master/data/bob_ross_paintings.csv)，通过 @frankiethull的[Bob Ross Colors 数据包](https://github.com/frankiethull/BobRossColors)。
 
-Twitter provides [guidelines](https://help.twitter.com/en/using-twitter/picture-descriptions) for how to add alt text to your images.
+> 这是来自电视节目《喜悦的绘画》中的[鲍勃·罗斯的绘画作品](https://www.twoinchbrush.com/all-paintings)的数据。
 
-The DataViz Society/Nightingale by way of Amy Cesal has an [article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) on writing _good_ alt text for plots/graphs.
+@frankiethull 创建了一个名为 [{BobRossColors}](https://github.com/frankiethull/BobRossColors) 的 R 数据包，其中包含有关调色板的信息，利用 imgpalr 从每幅绘画图像中提取出差异和定性颜色。此外，数据包中还包含了独特的鲍勃·罗斯命名的颜色。
 
-> Here's a simple formula for writing alt text for data visualization:
-> ### Chart type
-> It's helpful for people with partial sight to know what chart type it is and gives context for understanding the rest of the visual.
-> Example: Line graph
-> ### Type of data
-> What data is included in the chart? The x and y axis labels may help you figure this out.
-> Example: number of bananas sold per day in the last year
-> ### Reason for including the chart
-> Think about why you're including this visual. What does it show that's meaningful. There should be a point to every visual and you should tell people what to look for.
-> Example: the winter months have more banana sales
-> ### Link to data or source
-> Don't include this in your alt text, but it should be included somewhere in the surrounding text. People should be able to click on a link to view the source data or dig further into the visual. This provides transparency about your source and lets people explore the data.
-> Example: Data from the USDA
+在数据集的 GitHub 存储库中，还有[绘画作品的 png 图像](https://github.com/jwilber/Bob_Ross_Paintings/tree/master/data/paintings)！
 
-Penn State has an [article](https://accessibility.psu.edu/images/charts/) on writing alt text descriptions for charts and tables.
+您可能还想查看我们之前的[2019-08-06的鲍勃·罗斯数据集](https://tidytues.day/2019/2019-08-06)，看看命名对象和命名颜色之间是否存在相关性！
 
-> Charts, graphs and maps use visuals to convey complex images to users. But since they are images, these media provide serious accessibility issues to colorblind users and users of screen readers. See the [examples on this page](https://accessibility.psu.edu/images/charts/) for details on how to make charts more accessible.
-
-The `{rtweet}` package includes the [ability to post tweets](https://docs.ropensci.org/rtweet/reference/post_tweet.html) with alt text programatically.
-
-Need a **reminder**? There are [extensions](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related) that force you to remember to add Alt Text to Tweets with media.
-
-# Bob Ross Paintings
-
-The data this week comes from Jared Wilber's data on [Bob Ross Paintings](https://github.com/jwilber/Bob_Ross_Paintings/blob/master/data/bob_ross_paintings.csv) via @frankiethull [Bob Ross Colors data package](https://github.com/frankiethull/BobRossColors).
-
-> This is data from the [paintings of Bob Ross](https://www.twoinchbrush.com/all-paintings) featured in the TV Show 'The Joy of Painting'.
-
-@frankiethull created an R data package [{BobRossColors}](https://github.com/frankiethull/BobRossColors) with information on the palettes that leveraged imgpalr to mine divergent and qualitative colors from each painting image. In addition, unique Bob Ross named colors are in the package as well.
-
-In the github repository of the dataset, there are also [pngs of the paintings](https://github.com/jwilber/Bob_Ross_Paintings/tree/master/data/paintings) themselves!
-
-You might also want to check out our [previous Bob Ross dataset from 2019-08-06](https://tidytues.day/2019/2019-08-06) to see if there are correlations between named objects and named colors!
-
-
-
-### Get the data here
+### 在此处获取数据
 
 ```{r}
-# Get the Data
+# 获取数据
 
-# Read in with tidytuesdayR package 
-# Install from CRAN via: install.packages("tidytuesdayR")
-# This loads the readme and all the datasets for the week of interest
+# 使用 tidytuesdayR 包读取
+# 通过 CRAN 安装：install.packages("tidytuesdayR")
+# 这将加载感兴趣周的自述文件和所有数据集
 
-# Either ISO-8601 date or year/week works!
+# 可以使用 ISO-8601 日期或年/周
 
 tuesdata <- tidytuesdayR::tt_load('2023-02-21')
 tuesdata <- tidytuesdayR::tt_load(2023, week = 8)
 
 bob_ross <- tuesdata$bob_ross
 
-# Or read in the data manually
+# 或者手动读取数据
 
 bob_ross <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-02-21/bob_ross.csv')
 ```
 
-### Data Dictionary
+### 数据字典
 
 # `bob_ross.csv`
 
