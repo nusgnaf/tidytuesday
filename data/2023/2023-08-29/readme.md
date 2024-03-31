@@ -1,39 +1,37 @@
-# Fair Use
+# 合理使用
 
-The data this week comes from the [U.S. Copyright Office Fair Use Index](https://www.copyright.gov/fair-use/fair-index.html). 
+本周的数据来自[美国版权办公室合理使用指数](https://www.copyright.gov/fair-use/fair-index.html)。
 
-> Fair use is a longstanding and vital aspect of American copyright law. The goal of the Index is to make the principles and application of fair use more accessible and understandable to the public by presenting a searchable database of court opinions, including by category and type of use (e.g., music, internet/digitization, parody).
+> 合理使用是美国版权法的一个长期而重要的方面。该指数的目标是通过呈现一个可搜索的法院意见数据库，包括按类别和使用类型（例如音乐、互联网/数字化、模仿）分类，使合理使用原则和应用对公众更加可访问和可理解。
 
-There are two datasets this week for which the rows align, but the values might not precisely line up for a clean join -- a case you often have to deal with in real-world data.
+本周有两个数据集，它们的行是对齐的，但值可能不会完全对齐，因此在实际数据处理中经常会遇到这种情况。
 
-
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项 1: tidytuesdayR 包 
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2023-08-29')
-## OR
+## 或者
 tuesdata <- tidytuesdayR::tt_load(2023, week = 35)
 
 fair_use_cases <- tuesdata$fair_use_cases
 fair_use_findings <- tuesdata$fair_use_findings
 
-# Option 2: Read directly from GitHub
+# 选项 2: 直接从 GitHub 读取
 
 fair_use_cases <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-29/fair_use_cases.csv')
 fair_use_findings <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-29/fair_use_findings.csv')
 ```
 
-## How to Participate
+## 参与方式
 
-- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
-- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
-- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
+- [探索数据](https://r4ds.hadley.nz/)，留意有趣的关系。我们想强调的是，您不应该在数据中得出**因果关系**的结论。有许多调节变量会影响所有数据，其中许多可能没有被这些数据集捕获到。因此，我们的建议是使用所提供的数据来练习数据整理和绘图技术，并自行考虑这些关系背后可能存在的细微差别。
+- 利用 R 或其他编程语言创建可视化、模型、[shiny 应用](https://shiny.posit.co/)或其他数据科学相关的输出。
+- 使用 #TidyTuesday 标签在社交媒体上[分享您的输出和生成它的代码](../../../sharing.md)。
 
-
-### Data Dictionary
+### 数据字典
 
 # `fair_use_cases.csv`
 
