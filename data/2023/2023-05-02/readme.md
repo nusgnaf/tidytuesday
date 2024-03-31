@@ -1,96 +1,25 @@
-### Please add alt text to your posts
+# 门户项目
 
-Please add alt text (alternative text) to all of your posted graphics
-for `#TidyTuesday`.
+本周的数据来自[门户项目](https://portal.weecology.org/)。这是一个长期生态研究项目，研究亚利桑那州沙漠啮齿动物、植物、蚂蚁和天气的动态。
 
-Twitter provides
-[guidelines](https://help.twitter.com/en/using-twitter/picture-descriptions)
-for how to add alt text to your images.
+> 门户项目是在亚利桑那州门户附近进行的一项长期生态研究。自1977年以来，该地点一直被用于研究啮齿动物、蚂蚁和植物之间的相互作用，以及它们对气候的响应。为了研究生物之间的相互作用，他们通过实验性地操纵对24个研究区的访问。该研究已产生了100多篇科学论文，并且是美国历时最长的生态研究之一。
 
-The DataViz Society/Nightingale by way of Amy Cesal has an
-[article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
-on writing *good* alt text for plots/graphs.
+[Weecology研究小组](https://www.weecology.org/)监测啮齿动物、植物、蚂蚁和天气。门户项目的所有数据都以近实时的方式公开提供，以便为科学研究和外展提供最大的效益。核心数据集使用GitHub和持续分析运行自动化的实时数据工作流程进行管理。
 
-> Here's a simple formula for writing alt text for data visualization:
-> \### Chart type It's helpful for people with partial sight to know
-> what chart type it is and gives context for understanding the rest of
-> the visual. Example: Line graph \### Type of data What data is
-> included in the chart? The x and y axis labels may help you figure
-> this out. Example: number of bananas sold per day in the last year
-> \### Reason for including the chart Think about why you're including
-> this visual. What does it show that's meaningful. There should be a
-> point to every visual and you should tell people what to look for.
-> Example: the winter months have more banana sales \### Link to data or
-> source Don't include this in your alt text, but it should be included
-> somewhere in the surrounding text. People should be able to click on a
-> link to view the source data or dig further into the visual. This
-> provides transparency about your source and lets people explore the
-> data. Example: Data from the USDA
+该数据集侧重于啮齿动物数据。完整数据可通过以下资源获得：
 
-Penn State has an
-[article](https://accessibility.psu.edu/images/charts/) on writing alt
-text descriptions for charts and tables.
+- [GitHub数据存储库](https://github.com/weecology/PortalData)
+- [实时更新的Zenodo存档](https://doi.org/10.5281/zenodo.1215988)
+- [数据论文](https://www.biorxiv.org/content/early/2018/05/28/332783)
+- [方法文档](https://github.com/weecology/PortalData/blob/master/SiteandMethods/Methods.md)
 
-> Charts, graphs and maps use visuals to convey complex images to users.
-> But since they are images, these media provide serious accessibility
-> issues to colorblind users and users of screen readers. See the
-> [examples on this page](https://accessibility.psu.edu/images/charts/)
-> for details on how to make charts more accessible.
+门户项目数据也可以通过数据检索器(Data Retriever)访问，这是一个用于数据的包管理器。
 
-The `{rtweet}` package includes the [ability to post
-tweets](https://docs.ropensci.org/rtweet/reference/post_tweet.html) with
-alt text programatically.
+[数据检索器](https://www.data-retriever.org/)
 
-Need a **reminder**? There are
-[extensions](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related)
-that force you to remember to add Alt Text to Tweets with media.
+还维护有一个面向教学的数据集版本，其中去除了一些数据的复杂性，以便于计算训练目的的使用。该数据集是[数据修习生态学](https://datacarpentry.org/ecology-workshop/)材料的核心数据集，并已被下载了近50,000次。
 
-# The Portal Project
-
-The data this week comes from the [Portal
-Project](https://portal.weecology.org/). This is a long-term ecological
-research site studying the dynamics of desert rodents, plants, ants and
-weather in Arizona.
-
-> The Portal Project is a long-term ecological study being conducted
-> near Portal, AZ. Since 1977, the site has been used to study the
-> interactions among rodents, ants and plants and their respective
-> responses to climate. To study the interactions among organisms, they
-> experimentally manipulate access to 24 study plots. This study has
-> produced over 100 scientific papers and is one of the longest running
-> ecological studies in the U.S.
-
-The [Weecology research group](https://www.weecology.org/) monitors
-rodents, plants, ants, and weather. All data from the Portal Project are
-made openly available in near real-time so that they can provide the
-maximum benefit to scientific research and outreach. The core dataset is
-managed using an automated living data workflow run using GitHub and
-Continuous Analysis.
-
-This dataset focuses on the rodent data. Full data is available through
-these resources:
-
--   [GitHub Data Repository](https://github.com/weecology/PortalData)
--   [Live Updating Zenodo
-    Archive](https://doi.org/10.5281/zenodo.1215988)
--   [Data
-    Paper](https://www.biorxiv.org/content/early/2018/05/28/332783)
--   [Methods
-    Documentation](https://github.com/weecology/PortalData/blob/master/SiteandMethods/Methods.md)
-
-The Portal Project data can also be accessed through the Data Retriever,
-a package manager for data.
-
-[Data Retriever](https://www.data-retriever.org/)
-
-A teaching focused version of the dataset is also maintained with some
-of the complexities of the data removed to make it easy to use for
-computational training purposes. This dataset serves as the core dataset
-for the [Data Carpentry
-Ecology](https://datacarpentry.org/ecology-workshop/) material and has
-been downloaded almost 50,000 times.
-
-### Get the data here
+### 在这里获取数据
 
 ```{r}
 # Get the Data
@@ -118,7 +47,7 @@ surveys <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/ti
 
 ```
 
-### Data Dictionary
+### 数据字典
 
 # `plots.csv`
 
