@@ -1,86 +1,37 @@
-### Please add alt text to your posts
+# SAFI调查数据
 
-Please add alt text (alternative text) to all of your posted graphics
-for `#TidyTuesday`.
+本周的数据来自[SAFI（研究非洲农民领导的灌溉）调查](https://datacarpentry.org/socialsci-workshop/data/)，这是[Data Carpentry社会科学研讨会](https://datacarpentry.org/socialsci-workshop/)中使用的数据的子集。因此，如果您想学习如何使用这些数据，课程已经提供了！数据可通过[Figshare](https://figshare.com/articles/dataset/SAFI_Survey_Results/6262019)获得。
 
-Twitter provides
-[guidelines](https://help.twitter.com/en/using-twitter/picture-descriptions)
-for how to add alt text to your images.
+引用：Woodhouse, Philip; Veldwisch, Gert Jan; Brockington, Daniel; Komakech, Hans C.; Manjichi, Angela; Venot, Jean-Philippe (2018)：SAFI调查结果。doi:10.6084/m9.figshare.6262019.v1
 
-The DataViz Society/Nightingale by way of Amy Cesal has an
-[article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
-on writing *good* alt text for plots/graphs.
+> SAFI（研究非洲农民领导的灌溉）是一个正在进行的项目，旨在研究农业和灌溉方法。这是有关坦桑尼亚和莫桑比克的家庭和农业的调查数据。调查数据是通过在2016年11月至2017年6月之间进行的访谈收集的，使用了下载到Android智能手机的表格。调查表格是使用ODK（Open Data Kit）软件通过Excel电子表格创建的。然后将收集的数据发送回中央服务器。服务器可用于以JSON和CSV格式下载收集的数据。这是我们将使用的收集数据的教学版本。这不是完整的数据集。
 
-> Here's a simple formula for writing alt text for data visualization:
-> \### Chart type It's helpful for people with partial sight to know
-> what chart type it is and gives context for understanding the rest of
-> the visual. Example: Line graph \### Type of data What data is
-> included in the chart? The x and y axis labels may help you figure
-> this out. Example: number of bananas sold per day in the last year
-> \### Reason for including the chart Think about why you're including
-> this visual. What does it show that's meaningful. There should be a
-> point to every visual and you should tell people what to look for.
-> Example: the winter months have more banana sales \### Link to data or
-> source Don't include this in your alt text, but it should be included
-> somewhere in the surrounding text. People should be able to click on a
-> link to view the source data or dig further into the visual. This
-> provides transparency about your source and lets people explore the
-> data. Example: Data from the USDA
+> 调查涵盖了家庭特征（例如使用的建筑材料，家庭成员数量），农业实践（例如用水情况），资产（例如家畜数量和类型）以及家庭成员的详细信息。
 
-Penn State has an
-[article](https://accessibility.psu.edu/images/charts/) on writing alt
-text descriptions for charts and tables.
+> 在这些课程中使用的基本教学数据集是JSON数据集的子集，已转换为CSV格式。
 
-> Charts, graphs and maps use visuals to convey complex images to users.
-> But since they are images, these media provide serious accessibility
-> issues to colorblind users and users of screen readers. See the
-> [examples on this page](https://accessibility.psu.edu/images/charts/)
-> for details on how to make charts more accessible.
-
-The `{rtweet}` package includes the [ability to post
-tweets](https://docs.ropensci.org/rtweet/reference/post_tweet.html) with
-alt text programatically.
-
-Need a **reminder**? There are
-[extensions](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related)
-that force you to remember to add Alt Text to Tweets with media.
-
-# SAFI survey data
-
-The data this week comes from the [SAFI (Studying African Farmer-Led Irrigation) survey](https://datacarpentry.org/socialsci-workshop/data/), a subset of the data used in the [Data Carpentry Social Sciences workshop](https://datacarpentry.org/socialsci-workshop/). So, if you're looking how to learn how to work with this data, lessons are already available! Data is available through [Figshare](https://figshare.com/articles/dataset/SAFI_Survey_Results/6262019). 
-
-CITATION: Woodhouse, Philip; Veldwisch, Gert Jan; Brockington, Daniel; Komakech, Hans C.; Manjichi, Angela; Venot, Jean-Philippe (2018): SAFI Survey Results. doi:10.6084/m9.figshare.6262019.v1
-
-> SAFI (Studying African Farmer-Led Irrigation) is a currently running project which is looking at farming and irrigation methods. This is survey data relating to households and agriculture in Tanzania and Mozambique. The survey data was collected through interviews conducted between November 2016 and June 2017 using forms downloaded to Android Smartphones. The survey forms were created using the ODK (Open Data Kit) software via an Excel spreadsheet. The collected data is then sent back to a central server. The server can be used to download the collected data in both JSON and CSV formats. This is a teaching version of the collected data that we will be using. It is not the full dataset.
-
-> The survey covered such things as; household features (e.g. construction materials used, number of household members), agricultural practices (e.g. water usage), assets (e.g. number and types of livestock) and details about the household members.
-
-> The basic teaching dataset used in these lessons is a subset of the JSON dataset that has been converted into CSV format.
-
-
-
-### Get the data here
+### 在这里获取数据
 
 ```{r}
-# Get the Data
+# 获取数据
 
-# Read in with tidytuesdayR package 
-# Install from CRAN via: install.packages("tidytuesdayR")
-# This loads the readme and all the datasets for the week of interest
+# 使用tidytuesdayR包读取数据
+# 通过CRAN安装：install.packages("tidytuesdayR")
+# 这将加载本周感兴趣的readme和所有数据集
 
-# Either ISO-8601 date or year/week works!
+# ISO-8601日期或年/周都可以使用！
 
 tuesdata <- tidytuesdayR::tt_load('2023-06-13')
 tuesdata <- tidytuesdayR::tt_load(2023, week = 24)
 
 safi_data.csv <- tuesdata$`safi_data`
 
-# Or read in the data manually
+# 或者手动读取数据
 
 safi_data <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-13/safi_data.csv')
 ```
 
-### Data Dictionary
+### 数据字典
 
 # `safi_data.csv`
 
