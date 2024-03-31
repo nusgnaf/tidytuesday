@@ -1,73 +1,43 @@
-### Please add alt text to your posts
+# 好莱坞年龄差距
 
-Please add alt text (alternative text) to all of your posted graphics for `#TidyTuesday`. 
+本周的数据来自[好莱坞年龄差距](https://hollywoodagegap.com/)，由[Data Is Plural](https://www.data-is-plural.com/archive/2018-02-07-edition/)提供。
 
-Twitter provides [guidelines](https://help.twitter.com/en/using-twitter/picture-descriptions) for how to add alt text to your images.
+> 这是一个展示电影爱情利益者年龄差距的信息网站。
 
-The DataViz Society/Nightingale by way of Amy Cesal has an [article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) on writing _good_ alt text for plots/graphs.
+数据遵循一定的规则：
 
-> Here's a simple formula for writing alt text for data visualization:
-> ### Chart type
-> It's helpful for people with partial sight to know what chart type it is and gives context for understanding the rest of the visual.
-> Example: Line graph
-> ### Type of data
-> What data is included in the chart? The x and y axis labels may help you figure this out.
-> Example: number of bananas sold per day in the last year
-> ### Reason for including the chart
-> Think about why you're including this visual. What does it show that's meaningful. There should be a point to every visual and you should tell people what to look for.
-> Example: the winter months have more banana sales
-> ### Link to data or source
-> Don't include this in your alt text, but it should be included somewhere in the surrounding text. People should be able to click on a link to view the source data or dig further into the visual. This provides transparency about your source and lets people explore the data.
-> Example: Data from the USDA
+> 这两个（或更多）演员扮演的是真实的爱情利益者（不仅仅是朋友、同事或其他非浪漫类型的关系）
 
-Penn State has an [article](https://accessibility.psu.edu/images/charts/) on writing alt text descriptions for charts and tables.
+> 两位演员中最年轻的至少为17岁
 
-> Charts, graphs and maps use visuals to convey complex images to users. But since they are images, these media provide serious accessibility issues to colorblind users and users of screen readers. See the [examples on this page](https://accessibility.psu.edu/images/charts/) for details on how to make charts more accessible.
+> 不包括动画角色
 
-The `{rtweet}` package includes the [ability to post tweets](https://docs.ropensci.org/rtweet/reference/post_tweet.html) with alt text programatically.
+我们之前提供过有关[贝克德尔测试](https://tidytues.day/2021/2021-03-09)的数据集。了解这些数据集之间是否存在任何相关性可能会很有趣！贝克德尔测试数据集还包括有关用于该数据集的电影的其他信息。
 
-Need a **reminder**? There are [extensions](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related) that force you to remember to add Alt Text to Tweets with media.
+注意：年龄差距数据集包含“性别”列，其中始终包含“man”或“woman”的值。这些值似乎表示每部电影中的*角色*的身份认同。其中一些值与*演员*的身份认同不匹配。如果数据中有任何角色被错误地性别化，我们深感抱歉！
 
-# Hollywood Age Gaps
-
-The data this week comes from [Hollywood Age Gap](https://hollywoodagegap.com/) via [Data Is Plural](https://www.data-is-plural.com/archive/2018-02-07-edition/).
-
-> An informational site showing the age gap between movie love interests.
-
-The data follows certain rules:
-
-> The two (or more) actors play actual love interests (not just friends, coworkers, or some other non-romantic type of relationship)
-
-> The youngest of the two actors is at least 17 years old
-
-> Not animated characters
-
-We previously provided a dataset about the [Bechdel Test](https://tidytues.day/2021/2021-03-09). It might be interesting to see whether there is any correlation between these datasets! The Bechdel Test dataset also included additional information about the films that were used in that dataset.
-
-Note: The age gaps dataset includes "gender" columns, which always contain the values "man" or "woman". These values appear to indicate how the *characters* in each film identify. Some of these values do not match how the *actor* identifies. We apologize if any characters are misgendered in the data!
-
-### Get the data here
+### 在此处获取数据
 
 ```{r}
-# Get the Data
+# 获取数据
 
-# Read in with tidytuesdayR package 
-# Install from CRAN via: install.packages("tidytuesdayR")
-# This loads the readme and all the datasets for the week of interest
+# 使用tidytuesdayR包读取
+# 通过CRAN安装：install.packages("tidytuesdayR")
+# 这将加载感兴趣周的自述文件和所有数据集
 
-# Either ISO-8601 date or year/week works!
+# 可以使用ISO-8601日期或年/周
 
 tuesdata <- tidytuesdayR::tt_load('2023-02-14')
 tuesdata <- tidytuesdayR::tt_load(2023, week = 7)
 
 age_gaps <- tuesdata$age_gaps
 
-# Or read in the data manually
+# 或者手动读取数据
 
 age_gaps <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-02-14/age_gaps.csv')
 ```
 
-### Data Dictionary
+### 数据字典
 
 # `age_gaps.csv`
 
