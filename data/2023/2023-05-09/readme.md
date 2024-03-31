@@ -1,70 +1,23 @@
-### Please add alt text to your posts
+# 儿童看护成本
 
-Please add alt text (alternative text) to all of your posted graphics
-for `#TidyTuesday`.
+母亲节快乐！本周的数据来自[国家儿童看护价格数据库](https://www.dol.gov/agencies/wb/topics/featured-childcare)。
 
-Twitter provides
-[guidelines](https://help.twitter.com/en/using-twitter/picture-descriptions)
-for how to add alt text to your images.
+> 国家儿童看护价格数据库(NDCP)是县级别上最全面的联邦儿童看护价格信息来源。该数据库提供按照儿童看护提供者类型、儿童年龄和县特征划分的儿童看护价格数据。数据可追溯至2008年至2018年。
 
-The DataViz Society/Nightingale by way of Amy Cesal has an
-[article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
-on writing *good* alt text for plots/graphs.
+本周感谢Thomas Mock提供了这份数据，同时也要向[Jon Schwabish在Twitter上](https://twitter.com/jschwabish/status/1626597782491639810?s=46&t=avwSC7an3lwX3FH35u0gMA)指出原始政府发布的地图缺少标签表示感谢。
 
-> Here's a simple formula for writing alt text for data visualization:
-> \### Chart type It's helpful for people with partial sight to know
-> what chart type it is and gives context for understanding the rest of
-> the visual. Example: Line graph \### Type of data What data is
-> included in the chart? The x and y axis labels may help you figure
-> this out. Example: number of bananas sold per day in the last year
-> \### Reason for including the chart Think about why you're including
-> this visual. What does it show that's meaningful. There should be a
-> point to every visual and you should tell people what to look for.
-> Example: the winter months have more banana sales \### Link to data or
-> source Don't include this in your alt text, but it should be included
-> somewhere in the surrounding text. People should be able to click on a
-> link to view the source data or dig further into the visual. This
-> provides transparency about your source and lets people explore the
-> data. Example: Data from the USDA
+注意：本数据集暗示“双亲”指的是一男一女。我们意识到这并不反映每个充满爱的家庭的现实情况。
 
-Penn State has an
-[article](https://accessibility.psu.edu/images/charts/) on writing alt
-text descriptions for charts and tables.
-
-> Charts, graphs and maps use visuals to convey complex images to users.
-> But since they are images, these media provide serious accessibility
-> issues to colorblind users and users of screen readers. See the
-> [examples on this page](https://accessibility.psu.edu/images/charts/)
-> for details on how to make charts more accessible.
-
-The `{rtweet}` package includes the [ability to post
-tweets](https://docs.ropensci.org/rtweet/reference/post_tweet.html) with
-alt text programatically.
-
-Need a **reminder**? There are
-[extensions](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related)
-that force you to remember to add Alt Text to Tweets with media.
-
-# Childcare Costs
-
-Happy Mothers Day! The data this week comes from the [National Database of Childcare Prices](https://www.dol.gov/agencies/wb/topics/featured-childcare).
-
-> The National Database of Childcare Prices (NDCP) is the most comprehensive federal source of childcare prices at the county level. The database offers childcare price data by childcare provider type, age of children, and county characteristics. Data are available from 2008 to 2018.
-
-Thanks this week to Thomas Mock for the submission, with a hat tip to [Jon Schwabish on Twitter](https://twitter.com/jschwabish/status/1626597782491639810?s=46&t=avwSC7an3lwX3FH35u0gMA) for pointing out the lack of labels on the original government-posted map.
-
-Note: This dataset implies that "both parents" means one man and one woman. We recognize that this does not reflect the reality of every loving family.
-
-### Get the data here
+### 在这里获取数据
 
 ```{r}
-# Get the Data
+# 获取数据
 
-# Read in with tidytuesdayR package 
-# Install from CRAN via: install.packages("tidytuesdayR")
-# This loads the readme and all the datasets for the week of interest
+# 使用tidytuesdayR包读取数据
+# 通过CRAN安装：install.packages("tidytuesdayR")
+# 这将加载本周感兴趣的readme和所有数据集
 
-# Either ISO-8601 date or year/week works!
+# ISO-8601日期或年/周都可以使用！
 
 tuesdata <- tidytuesdayR::tt_load('2023-05-09')
 tuesdata <- tidytuesdayR::tt_load(2023, week = 19)
@@ -72,13 +25,13 @@ tuesdata <- tidytuesdayR::tt_load(2023, week = 19)
 childcare_costs <- tuesdata$childcare_costs
 counties <- tuesdata$counties
 
-# Or read in the data manually
+# 或者手动读取数据
 
 childcare_costs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/childcare_costs.csv')
 counties <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/counties.csv')
 ```
 
-### Data Dictionary
+### 数据字典
 
 # `childcare_costs.csv`
 
