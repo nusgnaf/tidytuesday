@@ -1,67 +1,37 @@
-### Please add alt text to your posts
+# 2021-2022英超联赛比赛数据
 
-Please add alt text (alternative text) to all of your posted graphics for `#TidyTuesday`. 
+本周的数据来自[Kaggle](https://www.kaggle.com/datasets/evangower/premier-league-match-data)，是由Evan Gower提供的[2021-2022英超联赛比赛数据](https://www.kaggle.com/datasets/evangower/premier-league-match-data)。
 
-Twitter provides [guidelines](https://help.twitter.com/en/using-twitter/picture-descriptions) for how to add alt text to your images.
+您可以探索英格兰足球超级联赛2021-22赛季的每场比赛和每支球队的比赛日统计数据。
 
-The DataViz Society/Nightingale by way of Amy Cesal has an [article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) on writing _good_ alt text for plots/graphs.
+数据包括参赛球队、日期、裁判以及主队和客队的统计数据，如犯规、射门、罚牌等！此外，还包括赛季每周排名的数据集。
 
-> Here's a simple formula for writing alt text for data visualization:
-> ### Chart type
-> It's helpful for people with partial sight to know what chart type it is and gives context for understanding the rest of the visual.
-> Example: Line graph
-> ### Type of data
-> What data is included in the chart? The x and y axis labels may help you figure this out.
-> Example: number of bananas sold per day in the last year
-> ### Reason for including the chart
-> Think about why you're including this visual. What does it show that's meaningful. There should be a point to every visual and you should tell people what to look for.
-> Example: the winter months have more banana sales
-> ### Link to data or source
-> Don't include this in your alt text, but it should be included somewhere in the surrounding text. People should be able to click on a link to view the source data or dig further into the visual. This provides transparency about your source and lets people explore the data.
-> Example: Data from the USDA
+这些数据是从英超联赛的官方网站收集而来。Evan 使用 Google 表格对数据进行了清洗。
 
-Penn State has an [article](https://accessibility.psu.edu/images/charts/) on writing alt text descriptions for charts and tables.
+Evan 进行了一项名为[如果比赛在半场结束时结束，谁会赢得英超联赛？](https://www.kaggle.com/code/evangower/who-wins-the-epl-if-games-end-at-half-time/)的分析，并且有一篇[来自 The Athletic 的文章](https://theathletic.com/3459766/2022/07/29/liverpool-manchester-city-premier-league-fouls-yellow-card/)讨论了每张黄牌所造成的犯规。
 
-> Charts, graphs and maps use visuals to convey complex images to users. But since they are images, these media provide serious accessibility issues to colorblind users and users of screen readers. See the [examples on this page](https://accessibility.psu.edu/images/charts/) for details on how to make charts more accessible.
-
-The `{rtweet}` package includes the [ability to post tweets](https://docs.ropensci.org/rtweet/reference/post_tweet.html) with alt text programatically.
-
-Need a **reminder**? There are [extensions](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related) that force you to remember to add Alt Text to Tweets with media.
-
-# Premier League Match Data 2021-2022
-
-The data this week comes from the [Premier League Match Data 2021-2022](https://www.kaggle.com/datasets/evangower/premier-league-match-data) via [Evan Gower](https://github.com/evangower) on Kaggle.
-
-You can explore match day statistics of every game and every team during the 2021-22 season of the English Premier League Data.
-
-Data includes teams playing, date, referee, and stats for home and away side such as fouls, shots, cards, and more! Also included is a dataset of the weekly rankings for the season.
-
-The data was collected from the official website of the Premier League. Evan then cleaned the data using google sheets.
-
-Evan did an analysis of [Who wins the EPL if games end at half time?](https://www.kaggle.com/code/evangower/who-wins-the-epl-if-games-end-at-half-time/) and there's [an article from the Athletic](https://theathletic.com/3459766/2022/07/29/liverpool-manchester-city-premier-league-fouls-yellow-card/) about fouls conceded per yellow card article.
-
-### Get the data here
+### 在这里获取数据
 
 ```{r}
-# Get the Data
+# 获取数据
 
-# Read in with tidytuesdayR package 
-# Install from CRAN via: install.packages("tidytuesdayR")
-# This loads the readme and all the datasets for the week of interest
+# 使用 tidytuesdayR 包读取数据
+# 通过 CRAN 安装：install.packages("tidytuesdayR")
+# 这将加载感兴趣的周的自述文件和所有数据集
 
-# Either ISO-8601 date or year/week works!
+# 使用 ISO-8601 日期格式或者年份/周数格式！
 
 tuesdata <- tidytuesdayR::tt_load('2023-04-04')
 tuesdata <- tidytuesdayR::tt_load(2023, week = 14)
 
 soccer <- tuesdata$soccer
 
-# Or read in the data manually
+# 或者手动读取数据
 
 soccer <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-04-04/soccer21-22.csv')
 ```
 
-### Data Dictionary
+### 数据字典
 
 # `soccer21-22.csv`
 
