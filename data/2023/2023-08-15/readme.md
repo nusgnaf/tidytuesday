@@ -1,33 +1,31 @@
-# Spam E-mail
+# 垃圾邮件
 
-The data this week comes from Vincent Arel-Bundock's Rdatasets package(https://vincentarelbundock.github.io/Rdatasets/index.html). 
+本周的数据来自 Vincent Arel-Bundock 的 Rdatasets 包（https://vincentarelbundock.github.io/Rdatasets/index.html）。
 
-> Rdatasets is a collection of 2246 datasets which were originally distributed alongside the statistical software environment R and some of its add-on packages. The goal is to make these data more broadly accessible for teaching and statistical software development.
+> Rdatasets 是一个包含 2246 个数据集的集合，最初是随着统计软件环境 R 及其一些附加包一起分发的。其目标是使这些数据更广泛地可用于教学和统计软件开发。
 
-We're working with the [spam email](https://vincentarelbundock.github.io/Rdatasets/doc/DAAG/spam7.html) dataset. This is a subset of the [spam e-mail database](https://search.r-project.org/CRAN/refmans/kernlab/html/spam.html).
+我们使用的是 [垃圾邮件](https://vincentarelbundock.github.io/Rdatasets/doc/DAAG/spam7.html) 数据集。这是 [垃圾邮件数据库](https://search.r-project.org/CRAN/refmans/kernlab/html/spam.html) 的一个子集。
 
-This is a dataset collected at Hewlett-Packard Labs by Mark Hopkins, Erik Reeber, George Forman, and Jaap Suermondt and shared with the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/94/spambase). The dataset classifies 4601 e-mails as spam or non-spam, with additional variables indicating the frequency of certain words and characters in the e-mail.
+这是由 Mark Hopkins、Erik Reeber、George Forman 和 Jaap Suermondt 在惠普实验室收集的数据集，并与 [UCI 机器学习库](https://archive.ics.uci.edu/dataset/94/spambase) 共享的。该数据集将4601封电子邮件分类为垃圾邮件或非垃圾邮件，并附带其他变量，指示电子邮件中某些单词和字符的频率。
 
-
-
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项 1: tidytuesdayR 包 
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2023-08-15')
-## OR
+## 或者
 tuesdata <- tidytuesdayR::tt_load(2023, week = 33)
 
 spam <- tuesdata$spam
 
-# Option 2: Read directly from GitHub
+# 选项 2: 直接从 GitHub 读取
 
 spam <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-15/spam.csv')
 ```
 
-### Data Dictionary
+### 数据字典
 
 # `spam.csv`
 
