@@ -1,79 +1,31 @@
-### Please add alt text to your posts
+# 龙卷风
 
-Please add alt text (alternative text) to all of your posted graphics
-for `#TidyTuesday`.
+本周的数据来自美国国家气象局的国家气象服务暴风中心 [Severe Weather Maps, Graphics, and Data Page](https://www.spc.noaa.gov/wcm/#data)。感谢 [Evan Gower](https://github.com/rfordatascience/tidytuesday/issues/549) 的建议！
 
-Twitter provides
-[guidelines](https://help.twitter.com/en/using-twitter/picture-descriptions)
-for how to add alt text to your images.
+Evan [在Kaggle上调查过](https://www.kaggle.com/code/evangower/diving-into-us-tornado-data)这个数据集的一个版本。
 
-The DataViz Society/Nightingale by way of Amy Cesal has an
-[article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
-on writing *good* alt text for plots/graphs.
-
-> Here's a simple formula for writing alt text for data visualization:
-> \### Chart type It's helpful for people with partial sight to know
-> what chart type it is and gives context for understanding the rest of
-> the visual. Example: Line graph \### Type of data What data is
-> included in the chart? The x and y axis labels may help you figure
-> this out. Example: number of bananas sold per day in the last year
-> \### Reason for including the chart Think about why you're including
-> this visual. What does it show that's meaningful. There should be a
-> point to every visual and you should tell people what to look for.
-> Example: the winter months have more banana sales \### Link to data or
-> source Don't include this in your alt text, but it should be included
-> somewhere in the surrounding text. People should be able to click on a
-> link to view the source data or dig further into the visual. This
-> provides transparency about your source and lets people explore the
-> data. Example: Data from the USDA
-
-Penn State has an
-[article](https://accessibility.psu.edu/images/charts/) on writing alt
-text descriptions for charts and tables.
-
-> Charts, graphs and maps use visuals to convey complex images to users.
-> But since they are images, these media provide serious accessibility
-> issues to colorblind users and users of screen readers. See the
-> [examples on this page](https://accessibility.psu.edu/images/charts/)
-> for details on how to make charts more accessible.
-
-The `{rtweet}` package includes the [ability to post
-tweets](https://docs.ropensci.org/rtweet/reference/post_tweet.html) with
-alt text programatically.
-
-Need a **reminder**? There are
-[extensions](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related)
-that force you to remember to add Alt Text to Tweets with media.
-
-# Tornados
-
-The data this week comes from NOAA's National Weather Service Storm Prediction Center [Severe Weather Maps, Graphics, and Data Page](https://www.spc.noaa.gov/wcm/#data).
-Thank you to [Evan Gower](https://github.com/rfordatascience/tidytuesday/issues/549) for the suggestion!
-
-Evan [investigated](https://www.kaggle.com/code/evangower/diving-into-us-tornado-data) a version of this dataset on Kaggle.
-
-### Get the data here
+### 在这里获取数据
 
 ```{r}
-# Get the Data
+# 获取数据
 
-# Read in with tidytuesdayR package 
-# Install from CRAN via: install.packages("tidytuesdayR")
-# This loads the readme and all the datasets for the week of interest
+# 使用tidytuesdayR包读取数据
+# 通过CRAN安装：install.packages("tidytuesdayR")
+# 这将加载本周感兴趣的readme和所有数据集
 
-# Either ISO-8601 date or year/week works!
+# ISO-8601日期或年/周都可以使用！
 
 tuesdata <- tidytuesdayR::tt_load('2023-05-16')
 tuesdata <- tidytuesdayR::tt_load(2023, week = 20)
 
 tornados <- tornados
 
-# Or read in the data manually
+# 或者手动读取数据
 
 tornados <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-16/tornados.csv')
 ```
 
-### Data Dictionary
+### 数据字典
 
 # `tornados.csv`
 
