@@ -1,30 +1,29 @@
-# US State Names 
+# 美国州名
 
-Happy [Colorado Day](https://www.timeanddate.com/holidays/us/colorado-day)! The data this week comes from three Wikipedia articles: [List of states and territories of the United States](https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States), [List of demonyms for US states and territories](https://en.wikipedia.org/wiki/List_of_demonyms_for_US_states_and_territories), and [List of state and territory name etymologies of the United States](https://en.wikipedia.org/wiki/List_of_state_and_territory_name_etymologies_of_the_United_States).
+祝[科罗拉多日快乐](https://www.timeanddate.com/holidays/us/colorado-day)！本周的数据来自三篇维基百科文章：[美国各州和领土列表](https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States)，[美国各州和领土的民族称谓列表](https://en.wikipedia.org/wiki/List_of_demonyms_for_US_states_and_territories)，以及[美国各州和领土名称词源列表](https://en.wikipedia.org/wiki/List_of_state_and_territory_name_etymologies_of_the_United_States)。
 
-A number of past TidyTuesdays (such as 
-[2018/2018-04-03](https://tidytues.day/2018/2018-04-03), [2019/2019-01-29](https://tidytues.day/2019/2019-01-29), [2020/2020-03-10](https://tidytues.day/2020/2020-03-10), and [2022/2022-11-08](https://tidytues.day/2022/2022-11-08) have state columns. Might joining in this state date offer any insights to those datasets?
+许多以前的 TidyTuesdays（比如[2018/2018-04-03](https://tidytues.day/2018/2018-04-03)、[2019/2019-01-29](https://tidytues.day/2019/2019-01-29)、[2020/2020-03-10](https://tidytues.day/2020/2020-03-10)和[2022/2022-11-08](https://tidytues.day/2022/2022-11-08)）都有州列。参与这个州数据是否能为这些数据集提供一些见解呢？
 
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项 1: tidytuesdayR 包 
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2023-08-01')
-## OR
+## 或者
 tuesdata <- tidytuesdayR::tt_load(2023, week = 31)
 
 states <- tuesdata$states
 state_name_etymology <- tuesdata$state_name_etymology
 
-# Option 2: Read directly from GitHub
+# 选项 2: 直接从 GitHub 读取
 
 states <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-01/states.csv')
 state_name_etymology <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-01/state_name_etymology.csv')
 ```
 
-### Data Dictionary
+### 数据字典
 
 # `states.csv`
 
