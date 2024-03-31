@@ -1,66 +1,19 @@
-### Please add alt text to your posts
+# UFO目击事件再分析
 
-Please add alt text (alternative text) to all of your posted graphics
-for `#TidyTuesday`.
+本周的数据来自[国家不明飞行物报告中心](https://nuforc.org/webreports/ndxshape.html)，由[Jon Harmon](https://github.com/jonthegeek/apis/)使用来自[sunrise-sunset.org](https://sunrise-sunset.org/)的数据进行了[清理](https://github.com/jonthegeek/apis/blob/main/01_ufo-data.qmd)和[增强](https://github.com/jonthegeek/apis/blob/main/01_ufo-enrich.qmd)。
 
-Twitter provides
-[guidelines](https://help.twitter.com/en/using-twitter/picture-descriptions)
-for how to add alt text to your images.
+如果这个数据集看起来很眼熟，那是因为我们[在2019年曾使用过一个版本](https://tidytues.day/2019/2019-06-25)。新版本添加了最近几年的数据，增加了有关白天时间的信息，并清理了原始数据集中的一些错误。我们希望看到描述2019年数据集与这个新数据集之间差异的可视化！
 
-The DataViz Society/Nightingale by way of Amy Cesal has an
-[article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
-on writing *good* alt text for plots/graphs.
-
-> Here's a simple formula for writing alt text for data visualization:
-> \### Chart type It's helpful for people with partial sight to know
-> what chart type it is and gives context for understanding the rest of
-> the visual. Example: Line graph \### Type of data What data is
-> included in the chart? The x and y axis labels may help you figure
-> this out. Example: number of bananas sold per day in the last year
-> \### Reason for including the chart Think about why you're including
-> this visual. What does it show that's meaningful. There should be a
-> point to every visual and you should tell people what to look for.
-> Example: the winter months have more banana sales \### Link to data or
-> source Don't include this in your alt text, but it should be included
-> somewhere in the surrounding text. People should be able to click on a
-> link to view the source data or dig further into the visual. This
-> provides transparency about your source and lets people explore the
-> data. Example: Data from the USDA
-
-Penn State has an
-[article](https://accessibility.psu.edu/images/charts/) on writing alt
-text descriptions for charts and tables.
-
-> Charts, graphs and maps use visuals to convey complex images to users.
-> But since they are images, these media provide serious accessibility
-> issues to colorblind users and users of screen readers. See the
-> [examples on this page](https://accessibility.psu.edu/images/charts/)
-> for details on how to make charts more accessible.
-
-The `{rtweet}` package includes the [ability to post
-tweets](https://docs.ropensci.org/rtweet/reference/post_tweet.html) with
-alt text programatically.
-
-Need a **reminder**? There are
-[extensions](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related)
-that force you to remember to add Alt Text to Tweets with media.
-
-# UFO Sightings Redux
-
-The data this week comes from the [National UFO Reporting Center](https://nuforc.org/webreports/ndxshape.html), [cleaned](https://github.com/jonthegeek/apis/blob/main/01_ufo-data.qmd) and [enriched](https://github.com/jonthegeek/apis/blob/main/01_ufo-enrich.qmd) with data from [sunrise-sunset.org](https://sunrise-sunset.org/) by [Jon Harmon](https://github.com/jonthegeek/apis/).
-
-If this dataset looks familiar, that's because we [used a version of it back in 2019](https://tidytues.day/2019/2019-06-25). The new version adds the last several years of data, adds information about time-of-day, and cleans up some errors in the original dataset. We'd love to see visualizations describing the differences between the 2019 dataset and this new dataset!
-
-### Get the data here
+### 在这里获取数据
 
 ```{r}
-# Get the Data
+# 获取数据
 
-# Read in with tidytuesdayR package 
-# Install from CRAN via: install.packages("tidytuesdayR")
-# This loads the readme and all the datasets for the week of interest
+# 使用tidytuesdayR包读取数据
+# 通过CRAN安装：install.packages("tidytuesdayR")
+# 这将加载本周感兴趣的readme和所有数据集
 
-# Either ISO-8601 date or year/week works!
+# ISO-8601日期或年/周都可以使用！
 
 tuesdata <- tidytuesdayR::tt_load('2023-06-20')
 tuesdata <- tidytuesdayR::tt_load(2023, week = 25)
@@ -69,14 +22,14 @@ ufo_sightings <- tuesdata$`ufo_sightings`
 places <- tuesdata$`places`
 day_parts_map <- tuesdata$`day_parts_map`
 
-# Or read in the data manually
+# 或者手动读取数据
 
 ufo_sightings <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/ufo_sightings.csv')
 places <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/places.csv')
 day_parts_map <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/day_parts_map.csv')
 ```
 
-### Data Dictionary
+### 数据字典
 
 # `ufo_sightings.csv`
 
