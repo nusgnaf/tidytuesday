@@ -1,67 +1,37 @@
-### Please add alt text to your posts
+# 新石器时代的创始作物
 
-Please add alt text (alternative text) to all of your posted graphics for `#TidyTuesday`. 
+本周的数据来自于[西南亚的“新石器时代创始作物”研究汇编](https://github.com/joeroe/SWAsiaNeolithicFounderCrops/)。["重新审视西南亚的“新石器时代创始作物”概念"](https://link.springer.com/article/10.1007/s00334-023-00917-1)是一篇使用这些数据的开放获取研究论文。感谢您分享您的研究，[@joeroe](https://github.com/joeroe)！
 
-Twitter provides [guidelines](https://help.twitter.com/en/using-twitter/picture-descriptions) for how to add alt text to your images.
+根据[关于该数据集的社交媒体帖子](https://fosstodon.org/@joeroe@archaeo.social/110186477750041419)：
 
-The DataViz Society/Nightingale by way of Amy Cesal has an [article](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) on writing _good_ alt text for plots/graphs.
-
-> Here's a simple formula for writing alt text for data visualization:
-> ### Chart type
-> It's helpful for people with partial sight to know what chart type it is and gives context for understanding the rest of the visual.
-> Example: Line graph
-> ### Type of data
-> What data is included in the chart? The x and y axis labels may help you figure this out.
-> Example: number of bananas sold per day in the last year
-> ### Reason for including the chart
-> Think about why you're including this visual. What does it show that's meaningful. There should be a point to every visual and you should tell people what to look for.
-> Example: the winter months have more banana sales
-> ### Link to data or source
-> Don't include this in your alt text, but it should be included somewhere in the surrounding text. People should be able to click on a link to view the source data or dig further into the visual. This provides transparency about your source and lets people explore the data.
-> Example: Data from the USDA
-
-Penn State has an [article](https://accessibility.psu.edu/images/charts/) on writing alt text descriptions for charts and tables.
-
-> Charts, graphs and maps use visuals to convey complex images to users. But since they are images, these media provide serious accessibility issues to colorblind users and users of screen readers. See the [examples on this page](https://accessibility.psu.edu/images/charts/) for details on how to make charts more accessible.
-
-The `{rtweet}` package includes the [ability to post tweets](https://docs.ropensci.org/rtweet/reference/post_tweet.html) with alt text programatically.
-
-Need a **reminder**? There are [extensions](https://chrome.google.com/webstore/detail/twitter-required-alt-text/fpjlpckbikddocimpfcgaldjghimjiik/related) that force you to remember to add Alt Text to Tweets with media.
-
-# Neolithic Founder Crops
-
-The data this week comes from [The "Neolithic Founder Crops"" in Southwest Asia: Research Compendium](https://github.com/joeroe/SWAsiaNeolithicFounderCrops/). ["Revisiting the concept of the 'Neolithic Founder Crops' in southwest Asia"](https://link.springer.com/article/10.1007/s00334-023-00917-1) is an open-access research paper that uses the data. Thank you for sharing your research, [@joeroe](https://github.com/joeroe)!
-
-According to the [social media thread about this dataset](https://fosstodon.org/@joeroe@archaeo.social/110186477750041419):
-
-> Eight 'founder crops' — emmer wheat, einkorn wheat, barley, lentil, pea, chickpea, bitter vetch, and flax — have long been thought to have been the bedrock of #Neolithic economies. 
+> 八种“创始作物”—— 小麦、粒小麦、大麦、扁豆、豌豆、鹰嘴豆、苦蕾和亚麻——长期以来一直被认为是#新石器时代经济的基石。
 > ...
-> We found that Neolithic economies were much more diverse than previously thought, incorporating dozens of species of cereals, legumes, small-seeded grasses, brassicas, pseudocereals, sedges, flowering plants, trees, and shrubs. Free-threshing wheat, grass pea, faba bean, and ‘new' glume wheat were especially widely cultivated.
+> 我们发现，新石器时代的经济比以前想象的要多样化得多，包括了数十种谷物、豆类、小种子草本植物、十字花科植物、假谷物、莎草、开花植物、树木和灌木。尤其是自由脱粒小麦、草豌豆、蚕豆和“新型”谷物在广泛种植中尤为重要。
 
-Read the thread for context about this data!
+阅读帖子以获取关于这些数据的背景信息！
 
-### Get the data here
+### 在这里获取数据
 
 ```{r}
-# Get the Data
+# 获取数据
 
-# Read in with tidytuesdayR package 
-# Install from CRAN via: install.packages("tidytuesdayR")
-# This loads the readme and all the datasets for the week of interest
+# 使用 tidytuesdayR 包读取数据
+# 通过 CRAN 安装：install.packages("tidytuesdayR")
+# 这将加载感兴趣的周的自述文件和所有数据集
 
-# Either ISO-8601 date or year/week works!
+# 使用 ISO-8601 日期格式或者年份/周数格式！
 
 tuesdata <- tidytuesdayR::tt_load('2023-04-18')
 tuesdata <- tidytuesdayR::tt_load(2023, week = 16)
 
 founder_crops <- tuesdata$founder_crops
 
-# Or read in the data manually
+# 或者手动读取数据
 
 founder_crops <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-04-18/founder_crops.csv')
 ```
 
-### Data Dictionary
+### 数据字典
 
 # `founder_crops.csv`
 
