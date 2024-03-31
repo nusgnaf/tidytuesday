@@ -1,37 +1,35 @@
-# Refugees
+# 难民
 
-The data this week comes from PopulationStatistics {refugees} R package. 
+本周的数据来自 PopulationStatistics {refugees} R 包。
 
-> {refugees} is an R package designed to facilitate access to the United Nations High Commissioner for Refugees (UNHCR) Refugee Data Finder. It provides an easy-to-use interface to the database, which covers forcibly displaced populations, including refugees, asylum-seekers, internally displaced people, stateless people, and others over a span of more than 70 years.
+> {refugees} 是一个旨在方便访问联合国难民事务高级专员公署（UNHCR）难民数据查询器的 R 包。它提供了一个易于使用的界面，用于访问覆盖了逾70年的强迫流离人口的数据库，包括难民、寻求庇护者、国内流离者、无国籍人士等。
 
-This package provides data from three major sources:
+该软件包提供了来自三个主要来源的数据：
 
-- Data from UNHCR’s annual statistical activities dating back to 1951.
-- Data from the United Nations Relief and Works Agency for Palestine Refugees in the Near East (UNRWA), specifically for registered Palestine refugees under UNRWA’s mandate.
-- Data from the Internal Displacement Monitoring Centre (IDMC) on people displaced within their country due to conflict or violence.
+- 自1951年以来联合国难民署的年度统计数据。
+- 来自巴勒斯坦难民救济与工程署（UNRWA）的数据，具体为 UNRWA 授权的注册巴勒斯坦难民。
+- 来自国内流离监测中心（IDMC）有关由于冲突或暴力而在其国家内部流离失所的人员的数据。
 
-The {refugees} package includes eight datasets. We're working with `population` with data from 2010 to 2022. 
+{refugees} 软件包包括八个数据集。我们正在使用 `population` 数据集，其中包含了2010年至2022年的数据。
 
-
-
-## The Data
+## 数据
 
 ```{r}
-# Option 1: tidytuesdayR package 
+# 选项 1: tidytuesdayR 包 
 ## install.packages("tidytuesdayR")
 
 tuesdata <- tidytuesdayR::tt_load('2023-08-22')
-## OR
+## 或者
 tuesdata <- tidytuesdayR::tt_load(2023, week = 34)
 
 population <- tuesdata$population
 
-# Option 2: Read directly from GitHub
+# 选项 2: 直接从 GitHub 读取
 
 population <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-22/population.csv')
 ```
 
-### Data Dictionary
+### 数据字典
 
 # `population.csv`
 
